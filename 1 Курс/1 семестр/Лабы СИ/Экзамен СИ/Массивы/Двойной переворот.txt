@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, x = 1, i;
+
+    scanf("%d", &N);
+    int mas[N];
+
+    for (i = 0; i < N; i++) {
+        mas[i] = i + 1;
+    }
+
+    int a, b, k, chg;
+    scanf("%d%d", &a, &b);
+
+    k = (b - a + 1) / 2;
+
+    for (i = 0; i < k; i++) {
+        chg = mas[a + i - 1 ];
+        mas[a + i - 1] = mas [b - i - 1];
+        mas [b - i - 1] = chg;
+    }
+
+    int c, d;
+    scanf("%d%d", &c, &d);
+
+    k = (d - c + 1) / 2;
+
+    for (i = 0; i < k; i++) {
+        chg = mas[c + i - 1 ];
+        mas[c + i - 1] = mas [d - i - 1];
+        mas [d - i - 1] = chg;
+    }
+
+    for (i = 0; i < N; i++) {
+        printf("%d ", mas[i]);
+    }
+
+    return 0;
+}
+

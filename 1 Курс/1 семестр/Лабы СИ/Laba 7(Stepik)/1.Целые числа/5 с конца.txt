@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int time;
+    scanf("%d", &time);
+    int hours = time/3600;
+    while (hours >= 24) {
+        hours -= 24;
+    }
+    
+    int minutes = (time - hours * 3600) / 60;
+    while (minutes >= 60) {
+        minutes -= 60;
+    }
+    
+    int seconds = time % 60;
+    while (seconds >= 60) {
+        seconds -= 60;
+    }
+    
+    if (minutes > 9 && seconds > 9) {
+        printf("%d:%d:%d", hours, minutes, seconds);
+    }
+    
+    if (minutes > 9 && seconds < 10) {
+        printf("%d:%d:0%d", hours, minutes, seconds);
+    }
+        
+    if (minutes < 10 && seconds > 9) {
+        printf("%d:0%d:%d", hours, minutes, seconds);
+    }
+        
+    if (minutes < 10 && seconds < 10) {
+        printf("%d:0%d:0%d", hours, minutes, seconds);
+    }
+    return 0;
+}

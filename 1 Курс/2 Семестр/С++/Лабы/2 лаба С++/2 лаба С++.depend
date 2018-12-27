@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1521274898 source:c:\users\lenovo\desktop\2 лаба С++\main.cpp
+	<iostream>
+	<cstdlib>
+	"myFunctions.h"
+
+1521274586 c:\users\lenovo\desktop\2 лаба С++\myfunctions.h
+
+1521870423 source:c:\users\lenovo\desktop\2 лаба С++\myfunctions.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<iomanip>
+	<stdio.h>
+	<string>
+	<windows.h>
+	"myFunctions.h"
+
+1521274898 source:c:\users\lenovo\desktop\Инст\1 Курс\2 Семестр\С++\Лабы\2 лаба С++\main.cpp
+	<iostream>
+	<cstdlib>
+	"myFunctions.h"
+
+1521274586 c:\users\lenovo\desktop\Инст\1 Курс\2 Семестр\С++\Лабы\2 лаба С++\myfunctions.h
+
+1521870423 source:c:\users\lenovo\desktop\Инст\1 Курс\2 Семестр\С++\Лабы\2 лаба С++\myfunctions.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	<iomanip>
+	<stdio.h>
+	<string>
+	<windows.h>
+	"myFunctions.h"
+

@@ -1,0 +1,149 @@
+create table if not exists kyrsmusicshop.Composition (
+  idComposition int not null auto_increment,
+  Name VARCHAR(20) not null,
+  Duration double not null,
+  ReleaseDate DATE,
+  DownLoadLink varchar(150),
+  primary key (idComposition)
+)
+
+create table if not exists kyrsmusicshop.TypeOfFile (
+  idTypeOfFile int not null auto_increment,
+  Name varchar(5) not null ,
+  primary key (idTypeOfFile)
+)
+
+create table if not exists kyrsmusicshop.Language(
+  idLanguage int not null auto_increment,
+  Name VARCHAR(20),
+  primary key (idLanguage)
+)
+
+create table if not exists kyrsmusicshop.Performer(
+  idPerformer int not null auto_increment,
+  Name varchar(45) not null,
+  primary key (idPerformer)
+ )
+
+create table if not exists kyrsmusicshop.Musician(
+  idMusician int not null auto_increment,
+  LastName varchar(30) not null,
+  FirstName varchar(30) not null,
+  MidName varchar(30) not null,
+  Birhday DATE not null,
+  primary key (idMusician)
+)
+
+create table if not exists kyrsmusicshop.profession(
+  idProfession int not null auto_increment,
+  Name varchar(30) not null,
+  primary key (idProfession)
+)
+
+create table if not exists kyrsmusicshop.album(
+  idAlbum int not null auto_increment,
+  Name varchar(40) not null,
+  ReleaseDate DATE,
+  primary key (idAlbum)
+)
+
+create table if not exists kyrsmusicshop.genre(
+  idGenre int not null auto_increment,
+  Name varchar(20)not null,
+  primary key (idGenre)
+)
+
+create table if not exists kyrsmusicshop.cost(
+  Cost double not null,
+  StartDate DATE not null,
+  EndDate DATE null
+)
+
+create table if not exists kyrsmusicshop.order(
+  idOrder int not null auto_increment,
+  Date date not null,
+  Status VARCHAR(15) not null,
+  primary key (idOrder)
+)
+
+create table if not exists kyrsmusicshop.order_has_composition(
+  Order_idOrder int not null,
+  Composition_idComposition int not null 
+)
+
+create table if not exists kyrsmusicshop.comment(
+  idComment int not null auto_increment,
+  Mark int not null,
+  Text text not null,
+  primary key (idComment)
+)
+
+
+create table if not exists kyrsmusicshop.performer_has_musician(
+  StartDate Date not null,
+  EndDate DATE null
+)
+
+create table if not exists kyrsmusicshop.user(
+  idUser int not null auto_increment,
+  Nickname VARCHAR(30) not null,
+  LastName varchar(30) not null,
+  FirstName varchar(30) not null,
+  MidName varchar(30) not null,
+  Birhday DATE not null,
+  Mail varchar(60) not null,
+  Telephone varchar(15) not null,
+  Password varchar(20) not null,
+  primary key (idUser)
+)
+
+alter table kyrsmusicshop.composition
+    add column Performer_idPerformer int not null,
+    add column Album_idAlbum int not null,
+    add column Genre_idGenre int not null,
+    add column TypeOfFile_idTypeOfFile int not null,
+    add column Language_idLanguage int not null,
+    add foreign key (Performer_idPerformer) references kyrsmusicshop.performer(idPerformer),
+    add foreign key (Album_idAlbum) references kyrsmusicshop.album(idAlbum),
+    add foreign key (Genre_idGenre) references kyrsmusicshop.genre(idGenre),
+    add foreign key (TypeOfFile_idTypeOfFile) references kyrsmusicshop.typeoffile(idTypeOfFile),
+    add foreign key (Language_idLanguage) references kyrsmusicshop.language(idLanguage)
+
+alter table kyrsmusicshop.album
+    add column Performer_idPerformer int not null,
+    add foreign key (Performer_idPerformer)
+    references kyrsmusicshop.performer(idPerformer)
+
+alter table kyrsmusicshop.performer_has_musician
+    add column Performer_idPerformer int not null,
+    add column Musician_idMusician int not null,
+    add column Profession_ifProfession int not null,
+    add foreign key (Performer_idPerformer) references kyrsmusicshop.performer(idPerformer),
+    add foreign key (Musician_idMusician) references kyrsmusicshop.musician(idMusician),
+    add foreign key (Profession_ifProfession) references kyrsmusicshop.profession(idProfession),
+    add primary key (Performer_idPerformer,Musician_idMusician)
+
+alter table kyrsmusicshop.cost
+    add column Composition_idComposition int not null,
+    add foreign key (Composition_idComposition)
+    references kyrsmusicshop.composition(idComposition),
+    add primary key (Composition_idComposition)
+
+alter table kyrsmusicshop.order_has_composition
+    add foreign key (Order_idOrder) references kyrsmusicshop.`order`(idOrder),
+    add foreign key (Composition_idComposition) references  kyrsmusicshop.composition(idComposition),
+    add primary key (Order_idOrder, Composition_idComposition)
+
+alter table kyrsmusicshop.comment
+    add column Composition_idComposition int not null,
+    add column User_idUser int not null,
+    add foreign key (Composition_idComposition) references kyrsmusicshop.composition(idComposition),
+    add foreign key (User_idUser) references kyrsmusicshop.user(idUser)
+
+alter table kyrsmusicshop.`order`
+    add column User_idUser int not null,
+    add FOREIGN KEY (User_idUser) references kyrsmusicshop.user(idUser)
+
+
+
+

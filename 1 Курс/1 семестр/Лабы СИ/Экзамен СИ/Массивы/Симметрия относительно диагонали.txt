@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, M, check = 0;
+
+    scanf("%d", &N);
+    int mas [N][N];
+
+    int i, j, tmp;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            scanf("%d", &mas[i][j]);
+        }
+    }
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            if (mas[i][j] != mas[j][i]) {
+                check = 1;
+            }
+        }
+    }
+
+    if (check == 1 ) {
+        printf("NO");
+    }
+    else {
+        printf("YES");
+    }
+
+    return 0;
+}
+

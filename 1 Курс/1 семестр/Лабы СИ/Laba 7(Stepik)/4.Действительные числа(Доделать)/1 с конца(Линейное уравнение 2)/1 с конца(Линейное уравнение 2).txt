@@ -1,0 +1,65 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <math.h> 
+
+int main() { 
+   
+    double a, b, c, d, e, f, d1, d2, d3, x1, x2, zero; 
+   
+    scanf("%lf%lf%lf%lf%lf%lf", &a, &b, &c, &d, &e, &f); 
+   zero = 1.0e-7; 
+    d3 = a*d - b*c; 
+    d1 = e*d - b*f; 
+    d2 = a*f - e*c; 
+   
+    if (!(fabs(d3) <= zero)) { 
+        x1 = d1 / d3; 
+        x2 = d2 / d3; 
+        printf("2 %lf %lf\n", x1, x2); 
+    } 
+    else { 
+        if (fabs(a) + fabs(b) + fabs(c) + fabs(d) <= zero) { 
+            if (fabs(e) + fabs(f) <= zero) { 
+            printf("5\n"); 
+            } 
+            else { 
+                printf("0\n"); 
+            } 
+        } 
+        else if ((!(fabs(d1) <= zero)) || (!(fabs(d2) <= zero))) { 
+            printf("0\n"); 
+        } 
+        else if (b == 0) { 
+            if (!(fabs(a) <= zero)){
+                printf("3 %lf\n", e / a); 
+            }
+            else if (fabs(d) <= zero){ 
+                printf("3 %lf\n", f / c); 
+            }
+            else if (fabs(c) <= zero) { 
+                printf("4 %lf\n", f / d); 
+            }
+            else { 
+                printf("1 %lf %lf\n", -c / d, f / d); 
+            }
+    } 
+    else if (a == 0) { 
+        if (!(fabs(b) <= zero)) { 
+            printf("4 %lf\n", e / b);
+        }
+        else if (fabs(d) <= zero){ 
+            printf("3 %lf\n", f / c); 
+        }
+        else if (fabs(c) <= zero) { 
+            printf("4 %lf\n", f / d); 
+        }
+        else { 
+            printf("1 %lf %lf\n", -c / b, f / d); 
+        }
+    } 
+    else {
+        printf("1 %lf %lf\n", -a / b, e / b); 
+    }
+    } 
+    return 0; 
+}

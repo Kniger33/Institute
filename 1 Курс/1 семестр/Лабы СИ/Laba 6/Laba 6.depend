@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1513597908 source:c:\users\lenovo\desktop\laba 6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+
+1513623438 source:c:\users\lenovo\desktop\mystringfunction.c
+	"MyStringFunction.h"
+	<malloc.h>
+
+1513623438 c:\users\lenovo\desktop\mystringfunction.h
+

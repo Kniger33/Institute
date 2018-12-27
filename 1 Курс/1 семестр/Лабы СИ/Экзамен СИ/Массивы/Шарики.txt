@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+int z[1000];
+int x = 0, sum_destr = 0, destruction;
+int num = 0, i, j;
+
+int main()
+{
+	scanf("%d", &num);  
+	for (i = 0; i < num; i++) 
+	{
+		scanf("%d", &z[i]);
+		if (z[i] == 0) { 
+			z[i] = 10;  
+		}
+	}
+	
+	while (x == 0)  
+	{
+		destruction = 1;
+		x = 1;  
+		for (i = 0; i < num; i++)  
+		{
+			if (z[i] == z[i + 1])  
+			{
+				destruction++; 
+			}
+			else 
+			{
+				if (destruction > 2) 
+				{
+					x = 0;
+					for (j = i + 1; j < num; j++)
+						{
+							z[j - destruction] = z[j];
+						}
+					num -= destruction; 
+					sum_destr += destruction; 
+					break;
+				}
+				destruction = 1;
+			}
+		}
+	}
+	printf("%d", sum_destr); 
+	return 0;
+}

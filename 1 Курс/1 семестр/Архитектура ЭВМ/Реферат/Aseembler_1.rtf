@@ -1,0 +1,157 @@
+{\rtf1\ansi\ansicpg1251\deff0\nouicompat\deflang1049{\fonttbl{\f0\froman\fprq2\fcharset204 Times New Roman;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.15063}\viewkind4\uc1 
+\pard\widctlpar\f0\fs28 s_s segment stack\par
+\tab db\tab\tab 256 dup (?)\tab\tab        ; \'d0\'e5\'e7\'e5\'f0\'e2\'e8\'f0\'ee\'e2\'e0\'ed\'e8\'e5 \'ef\'e0\'ec\'ff\'f2\'e8\par
+s_s ends\par
+\par
+d_s segment\par
+\tab a_size\tab  equ 5\tab\tab\tab\tab        ; \'d0\'e0\'e7\'ec\'e5\'f0 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+\tab a db a_size dup (?)\tab                            ;\'c8\'f1\'f5\'ee\'e4\'ed\'fb\'e9 \'ec\'e0\'f1\'f1\'e8\'e2\par
+\tab\par
+\tab ; \'d1\'ee\'ee\'e1\'f9\'e5\'ed\'e8\'e5 \'ed\'e0 \'e2\'e2\'ee\'e4 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+\par
+\tab msg_array_inp\tab db 'Input array:$'\par
+\tab msg_array_out   db  'Counts:$'\par
+\tab not_found  db  'Not found'\par
+d_s ends\par
+\par
+c_s segment\par
+assume ss:s_s, cs:c_s, ds:d_s, es:d_s\par
+\par
+begin:\par
+\par
+\tab ; \'c8\'ed\'e8\'f6\'e8\'e0\'eb\'e8\'e7\'e0\'f6\'e8\'ff \'f1\'e5\'e3\'ec\'e5\'ed\'f2\'ed\'fb\'f5 \'f0\'e5\'e3\'e8\'f1\'f2\'f0\'ee\'e2\par
+\par
+\tab mov\tab\tab ax, d_s\par
+\tab mov\tab\tab ds, ax\par
+\tab mov\tab\tab es, ax\par
+\tab\par
+\tab mov\tab\tab ax, 0003h\par
+\tab int\tab\tab 10h\par
+\par
+\tab ; \'c2\'fb\'e2\'ee\'e4 \'f1\'ee\'ee\'e1\'f9\'e5\'ed\'e8\'ff \'ee \'e2\'e2\'ee\'e4\'e5 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+\par
+\tab mov\tab\tab ah, 09h\par
+\tab mov\tab\tab dx, offset msg_array_inp\par
+\tab int\tab\tab 21h\par
+\tab\par
+\tab ; \'c2\'e2\'ee\'e4 \'ec\'e0\'f1\'f1\'e8\'e2\'e0 \'f6\'e5\'eb\'fb\'f5 \'f7\'e8\'f1\'e5\'eb\par
+
+\pard\widctlpar\fi708 mov\tab\tab cx, a_size\tab                  ; \'ca\'ee\'eb-\'e2\'ee \'ef\'ee\'e2\'f2\'ee\'f0\'ee\'e2  \'f6\'e8\'ea\'eb\'e0\par
+
+\pard\widctlpar\tab xor\tab\tab si, si\tab\tab\tab        ; \'ce\'e1\'ed\'f3\'eb\'ff\'e5\'ec \'e8\'ed\'e4\'e5\'ea\'f1 \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'ee\'e2 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+\tab\par
+NEXT_NUM:\par
+\tab mov\tab\tab dl, 1\tab\tab\tab         ; \'c7\'ed\'e0\'ea \'ee\'f7\'e5\'f0\'e5\'e4\'ed\'ee\'e3\'ee \'f7\'e8\'f1\'eb\'e0: 1(+), -1(-)\par
+\tab\par
+NEXT_CHAR:\par
+\tab ; \'d7\'f2\'e5\'ed\'e8\'e5 \'f1\'e8\'ec\'e2\'ee\'eb\'e0 \'f1 \'ea\'eb\'e0\'e2\'e8\'e0\'f2\'f3\'f0\'fb, al - \'ea\'ee\'e4 \'f1\'e8\'ec\'e2\'ee\'eb\'e0\par
+\tab mov\tab\tab ah, 01h\par
+\tab int\tab\tab 21h\par
+\tab\par
+\tab ; \'cf\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'ed\'e0 \'e2\'e2\'ee\'e4 \'ef\'f0\'ee\'e1\'e5\'eb\'e0 ' '\par
+\tab cmp\tab\tab al, ' '\par
+\tab jnz     CMP_NEG\tab\tab\tab            ; \'c5\'f1\'eb\'e8 \'e2\'e2\'e5\'e4\'b8\'ed \'ed\'e5 \'ef\'f0\'ee\'e1\'e5\'eb\par
+\tab jmp\tab\tab NEXT_CHAR\tab\tab ; \'c5\'f1\'eb\'e8 \'ef\'f0\'ee\'e1\'e5\'eb\par
+\tab\par
+CMP_NEG:\par
+\tab ; \'cf\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'ed\'e0 \'e2\'e2\'ee\'e4 \'ec\'e8\'ed\'f3\'f1\'e0 '-'\par
+\tab cmp\tab\tab al, '-'\par
+\tab jnz\tab\tab CMP_NUM\tab\tab\tab ; \'c5\'f1\'eb\'e8 al \'ed\'e5\'f0\'e0\'e2\'e5\'ed '-'\par
+\tab ; \'c5\'f1\'eb\'e8 \'ec\'e8\'ed\'f3\'f1 '-'\par
+\tab mov\tab\tab dl, -1\tab\tab\tab            ; \'c7\'ed\'e0\'f7\'e8\'f2 \'f7\'e8\'f1\'eb\'ee \'e1\'f3\'e4\'e5\'f2 \'ee\'f2\'f0\'e8\'f6\'e0\'f2\'e5\'eb\'fc\'ed\'ee\par
+\tab jmp\tab\tab NEXT_CHAR\par
+\tab\par
+CMP_NUM:\par
+\tab ; \'cf\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'ed\'e0 \'e2\'e2\'ee\'e4 \'f6\'e8\'f4\'f0\'fb\par
+\tab cmp\tab\tab al, '0'\par
+\tab jb\tab\tab EXIT\tab\tab                      ; \'c5\'f1\'eb\'e8 \'ea\'ee\'e4 \'e2\'e2\'e5\'e4\'b8\'ed\'ed\'ee\'e3\'ee \'f1\'e8\'ec\'e2\'ee\'eb\'e0 < '0'\par
+\tab cmp\tab\tab al, '9'\par
+\tab jg\tab\tab EXIT\tab\tab                       ; \'c5\'f1\'eb\'e8 \'ea\'ee\'e4 \'e2\'e2\'e5\'e4\'b8\'ed\'ed\'ee\'e3\'ee \'f1\'e8\'ec\'e2\'ee\'eb\'e0 > '9'\par
+\tab ; \'c2\'e2\'e5\'e4\'e5\'ed\'e0 \'f6\'e8\'f4\'f0\'e0\par
+\tab jmp\tab\tab SAVE_NUM\par
+\tab\par
+SAVE_NUM:\par
+\tab ; \'c2\'ee \'e2\'f1\'e5\'f5 \'ee\'f1\'f2\'e0\'eb\'fc\'ed\'fb\'f5 \'f1\'eb\'f3\'f7\'e0\'ff\'f5 \'ef\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'ec \'f1\'e8\'ec\'e2\'ee\'eb \'e2 \'f7\'e8\'f1\'eb\'ee \'e8 \'e7\'e0\'ed\'ee\'f1\'e8\'ec \'e2 \'ec\'e0\'f1\'f1\'e8\'e2\par
+\tab sub\tab\tab al, '0'\tab\tab\tab             ; \'cf\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'ec \'f1\'e8\'ec\'e2\'ee\'eb \'e2 \'f7\'e8\'f1\'eb\'ee\par
+\tab xor\tab\tab ah, ah\par
+\tab imul\tab dl\tab\tab\tab\tab              ; \'d3\'f1\'f2\'e0\'ed\'e0\'e2\'eb\'e8\'e2\'e0\'e5\'ec \'e7\'ed\'e0\'ea \'f7\'e8\'f1\'eb\'e0 ax*bl\par
+\tab mov\tab\tab a[si], al\tab\tab              ; \'c7\'e0\'ed\'ee\'f1\'e8\'ec \'f7\'e8\'f1\'eb\'ee \'e2 \'ec\'e0\'f1\'f1\'e8\'e2\par
+\tab\par
+\tab inc\tab\tab si\tab\tab\tab\tab     ; \'cf\'e5\'f0\'e5\'f5\'ee\'e4\'e8\'ec \'ea \'f1\'eb\'e5\'e4\'f3\'fe\'f9\'e5\'ec\'f3 \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'f3\par
+\tab loop\tab NEXT_NUM\par
+\tab\par
+\tab ; \'c2\'fb\'e2\'ee\'e4 \'ef\'e5\'f0\'e5\'e2\'ee\'e4\'e0 \'f1\'f2\'f0\'ee\'ea\'e8\par
+\tab mov\tab\tab ah, 02h\par
+\tab mov\tab\tab dl, 0ah\par
+\tab int\tab\tab 21h\par
+\tab mov\tab\tab ah, 02h\par
+\tab mov\tab\tab dl, 0dh\par
+\tab int\tab\tab 21h\par
+\tab\par
+\par
+\tab ; \'cf\'ee\'e8\'f1\'ea \'e8 \'e2\'fb\'e2\'ee\'e4 \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'ee\'e2 \'ec\'e0\'f1\'f1\'e8\'e2\'e0,\par
+\tab ; \'ea\'ee\'f2\'ee\'f0\'fb\'e5 \'ee\'e4\'ed\'ee\'e2\'f0\'e5\'ec\'e5\'ed\'ed\'ee \'ee\'f2\'f0\'e8\'f6\'e0\'f2\'e5\'eb\'fc\'ed\'fb \'e8 \'ed\'e5\'f7\'b8\'f2\'ed\'fb\par
+\par
+\tab mov\tab\tab cx, a_size\tab\tab        ; \'ca\'ee\'eb\'e8\'f7\'e5\'f1\'f2\'e2\'ee \'f7\'e8\'f1\'e5\'eb \'e2 \'ec\'e0\'f1\'f1\'e8\'e2\'e5\par
+\tab xor\tab\tab si, si\tab\tab\tab        ; \'ce\'e1\'ed\'f3\'eb\'ff\'e5\'ec \'e8\'ed\'e4\'e5\'ea\'f1 \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'ee\'e2 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+FIND_NUM:\par
+\tab mov\tab\tab bl, a[si]\tab\tab       ; \'d1\'f7\'e8\'f2\'fb\'e2\'e0\'e5\'ec \'f2\'e5\'ea\'f3\'f9\'e8\'e9 \'fd\'eb\'e5\'ec\'e5\'ed\'f2 \'ec\'e0\'f1\'f1\'e8\'e2\'e0\par
+\tab\par
+\tab ; \'cf\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'ed\'e0 \'ee\'f2\'f0\'e8\'f6\'e0\'f2\'e5\'eb\'fc\'ed\'ee\'f1\'f2\'fc \'f7\'e8\'f1\'eb\'e0\par
+\par
+\tab cmp\tab\tab bl, 0\par
+\tab jge\tab\tab FIND_NUM_NEXT\tab ; \'c5\'f1\'eb\'e8 >= 0\par
+\par
+\tab ; \'cf\'f0\'ee\'e2\'e5\'f0\'ea\'e0 \'ed\'e0 \'ed\'e5\'f7\'b8\'f2\'ed\'ee\'f1\'f2\'fc\par
+\tab test\tab bl, 1\par
+\tab jz\tab\tab FIND_NUM_NEXT\tab ; \'c5\'f1\'eb\'e8 \'ed\'f3\'eb\'e5\'e2\'ee\'e9 \'e1\'e8\'f2 \'f0\'e0\'e2\'e5\'ed 0, \'f7\'e8\'f1\'eb\'ee \'f7\'b8\'f2\'ed\'ee\'e5\par
+\tab\par
+\tab mov\tab\tab ah, 09h\par
+\tab mov\tab\tab dx, offset msg_array_out\par
+\tab int\tab\tab 21h\par
+\tab\par
+\tab ; \'c5\'f1\'eb\'e8 \'f7\'e8\'f1\'eb\'ee \'ee\'f2\'f0\'e8\'f6\'e0\'f2\'e5\'eb\'fc\'ed\'ee \'e8 \'ed\'e5\'f7\'b8\'f2\'ed\'ee, \'e2\'fb\'e2\'ee\'e4\'e8\'ec \'e5\'e3\'ee \par
+\par
+\tab ; \'c2\'fb\'e2\'ee\'e4 \'e7\'ed\'e0\'ea\'e0 \'ec\'e8\'ed\'f3\'f1\par
+\par
+\tab mov\tab\tab ah, 02h\par
+\tab mov\tab\tab dl, '-'\par
+\tab int\tab\tab 21h\par
+\par
+\tab ; \'cf\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'ec \'f7\'e8\'f1\'eb\'ee \'e2 \'f1\'e8\'ec\'e2\'ee\'eb\par
+\par
+\tab neg\tab\tab bl\tab\tab\tab\tab ; \'cf\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'ec \'e2 \'ef\'ee\'eb\'ee\'e6\'e8\'f2\'e5\'eb\'fc\'ed\'ee\'e5\par
+\tab add\tab\tab bl, '0'\tab\tab\tab\tab ; \'cf\'f0\'e5\'ee\'e1\'f0\'e0\'e7\'f3\'e5\'ec \'e2 \'f1\'e8\'ec\'e2\'ee\'eb\par
+\par
+\tab ; \'c2\'fb\'e2\'ee\'e4 \'f7\'e8\'f1\'eb\'e0\par
+\tab\par
+\tab mov\tab\tab ah, 02h\par
+\tab mov\tab\tab dl, bl\par
+\tab int\tab\tab 21h\par
+\par
+\tab ; \'c2\'fb\'e2\'ee\'e4 \'ef\'f0\'ee\'e1\'e5\'eb\'e0 ' '\par
+\par
+\tab mov\tab\tab ah, 02h\par
+\tab mov\tab\tab dl, ' '\par
+\tab int\tab\tab 21h\par
+\tab\par
+FIND_NUM_NEXT:\par
+\tab inc\tab\tab si\tab\tab\tab ; \'cf\'e5\'f0\'e5\'f5\'ee\'e4\'e8\'ec \'ea \'f1\'eb\'e5\'e4\'f3\'fe\'f9\'e5\'ec\'f3 \'fd\'eb\'e5\'ec\'e5\'ed\'f2\'f3\par
+\tab loop\tab FIND_NUM\par
+\tab\par
+\tab mov\tab\tab ah, 09h\par
+\tab mov\tab\tab dx, offset not_found\par
+\tab int\tab\tab 21h\par
+\tab\par
+EXIT:\par
+\tab ; \'c7\'e0\'e2\'e5\'f0\'f8\'e5\'ed\'e8\'e5 \'ef\'f0\'ee\'e3\'f0\'e0\'ec\'ec\'fb\par
+\tab mov\tab\tab ax, 4c00h\par
+\tab int\tab\tab 21h\par
+\par
+c_s ends\par
+end begin\par
+
+\pard\sa200\sl276\slmult1\f1\fs22\lang1033\par
+}
+ 

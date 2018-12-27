@@ -1,0 +1,58 @@
+create procedure deleteOldCosts()
+  begin
+    declare dateNow date default now();
+    declare finished int default 0;
+    declare startDate date;
+    declare id int;
+
+    declare costCursor cursor for select idCost, StartDate from cost;
+
+    declare continue handler for not found set finished = 1;
+
+    open costCursor;
+
+    getEndDate: loop
+      fetch costCursor into id, startDate;
+
+      if datediff(dateNow, startDate) >= 3500 then
+        delete from cost where idCost = id;
+      end if;
+
+      if finished = 1 then
+        leave getEndDate;
+      end if;
+
+    end loop;
+    close costCursor;
+
+  end;
+
+
+create procedure getAlbumOfComposition(IN inName varchar(40))
+  begin
+    select album.Name from album
+      inner join composition c on album.idAlbum = c.Album_idAlbum
+        where lower(c.Name) = lower(inName);
+  end;
+
+create procedure getNumberOfSongsInAlbum(in inName varchar(40), out outCount int)
+  begin
+
+    set outCount = (
+      select count(composition.Name) from composition
+        inner join album a on composition.Album_idAlbum = a.idAlbum
+          where lower(a.Name) = lower(inName)
+                    );
+  end;
+
+
+create procedure getCommentsBySongId (in inId int)
+  begin
+    select idUser, Nickname, LastName, FirstName, MidName, Birhday, Mail, Telephone from user
+      inner join comment c on user.idUser = c.User_idUser
+      inner join composition c2 on c.Composition_idComposition = c2.idComposition
+        where c2.idComposition = inId;
+  end;
+
+
+

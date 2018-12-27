@@ -1,0 +1,4 @@
+INSERT INTO university.`Group` (idGroup, groupName, course, semester, Faculty_has_Direction_Faculty_idFaculty, Faculty_has_Direction_Faculty_idDirection, Teacher_idTeacher) VALUES (1, '71-PG', 2, 3, 1, 1, null);
+INSERT INTO university.`Group` (idGroup, groupName, course, semester, Faculty_has_Direction_Faculty_idFaculty, Faculty_has_Direction_Faculty_idDirection, Teacher_idTeacher) VALUES (5, '71-IVT', 2, 3, 1, 2, null);
+INSERT INTO university.`Group` (idGroup, groupName, course, semester, Faculty_has_Direction_Faculty_idFaculty, Faculty_has_Direction_Faculty_idDirection, Teacher_idTeacher) VALUES (6, '71-PI', 2, 3, 1, 4, null);
+INSERT INTO university.`Group` (idGroup, groupName, course, semester, Faculty_has_Direction_Faculty_idFaculty, Faculty_has_Direction_Faculty_idDirection, Teacher_idTeacher) VALUES (7, '71-IT', 2, 3, 1, 3, null);

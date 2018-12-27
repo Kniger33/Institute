@@ -1,0 +1,154 @@
+# depslib dependency file v1.0
+1513696787 source:d:\Проекты Си\lab6\student\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	"MyStringFunction.h"
+	"StudentFunction.h"
+
+1513619774 source:d:\Проекты Си\lab6\student\mystringfunction.c
+	"MyStringFunction.h"
+	<malloc.h>
+
+1513613020 d:\Проекты Си\lab6\student\mystringfunction.h
+
+1513697051 source:d:\Проекты Си\lab6\student\studentfunction.c
+	"MyStringFunction.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+
+1513696316 d:\Проекты Си\lab6\student\studentfunction.h
+
+1513697154 source:d:\codeblocks\Проекты\student\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	"MyStringFunction.h"
+	"StudentFunction.h"
+
+1513613020 d:\codeblocks\Проекты\student\mystringfunction.h
+
+1513696318 d:\codeblocks\Проекты\student\studentfunction.h
+
+1513619774 source:d:\codeblocks\Проекты\student\mystringfunction.c
+	"MyStringFunction.h"
+	<malloc.h>
+
+1513671186 source:d:\codeblocks\Проекты\student\studentfunction.c
+	"MyStringFunction.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+
+1514190684 source:e:\student\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	"myS.h"
+	"StudentFunction.h"
+	<locale.h>
+
+1513613020 e:\student\mystringfunction.h
+
+1513696318 e:\student\studentfunction.h
+
+1514189468 source:e:\student\mystringfunction.c
+	"myS.h"
+	<malloc.h>
+	<locale.h>
+
+1514189972 source:e:\student\studentfunction.c
+	"myS.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	<locale.h>
+
+1513613020 e:\student\mys.h
+
+1514189468 source:c:\users\lenovo\desktop\student\mystringfunction.c
+	"myS.h"
+	<malloc.h>
+	<locale.h>
+
+1514280365 c:\users\lenovo\desktop\student\mys.h
+
+1514189972 source:c:\users\lenovo\desktop\student\studentfunction.c
+	"myS.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	<locale.h>
+
+1514288287 source:c:\users\lenovo\desktop\student\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	"myS.h"
+	"myFunctions.h"
+	<locale.h>
+
+1513696318 c:\users\lenovo\desktop\student\studentfunction.h
+
+1514198019 source:c:\users\lenovo\desktop\student1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	"myS.h"
+	"myFunctions.h"
+
+1514198567 c:\users\lenovo\desktop\student1\mys.h
+
+1513696318 c:\users\lenovo\desktop\student1\studentfunction.h
+
+1514189972 source:c:\users\lenovo\desktop\student1\studentfunction.c
+	"myS.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	<locale.h>
+
+1514198427 source:c:\users\lenovo\desktop\student1\mys.c
+	"myS.h"
+	<malloc.h>
+
+1514198056 c:\users\lenovo\desktop\student1\myfunctions.h
+
+1514199326 source:c:\users\lenovo\desktop\student1\myfunctions.c
+	"myS.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	<locale.h>
+
+1514288376 source:c:\users\lenovo\desktop\student\myfunctions.c
+	"myS.h"
+	<stdio.h>
+	<malloc.h>
+	<windows.h>
+	<conio.h>
+	<locale.h>
+
+1514282389 source:c:\users\lenovo\desktop\student\mys.c
+	"myS.h"
+	<malloc.h>
+
+1514198056 c:\users\lenovo\desktop\student\myfunctions.h
+

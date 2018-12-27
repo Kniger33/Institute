@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1514240459 source:c:\users\павел\google диск\огу\си\лаба6\student\str.c
+	"str.h"
+
+1514218964 c:\users\павел\google диск\огу\си\лаба6\student\str.h
+
+1514282621 source:c:\users\павел\google диск\огу\си\лаба6\student\main.c
+	<stdio.h>
+	"str.h"
+	"stud.h"
+
+1514228908 c:\users\павел\google диск\огу\си\лаба6\student\stud.h
+
+1514257800 source:c:\users\павел\google диск\огу\си\лаба6\student\stud.c
+	<stdio.h>
+	<string.h>
+	"stud.h"
+
+1514241946 source:c:\users\lenovo\desktop\student123\main.c
+	<stdio.h>
+	"str.h"
+	"stud.h"
+
+1514179364 c:\users\lenovo\desktop\student123\str.h
+
+1514189308 c:\users\lenovo\desktop\student123\stud.h
+
+1514200858 source:c:\users\lenovo\desktop\student123\str.c
+	"str.h"
+
+1514218200 source:c:\users\lenovo\desktop\student123\stud.c
+	<stdio.h>
+	<string.h>
+	"stud.h"
+

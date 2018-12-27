@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  
+    int I, J, K, zero = 0, count = 0;
+    scanf("%d%d%d", &I, &J, &K);
+    
+    while(K != zero){
+        
+        if(K == zero){
+            break;
+        }
+        if((J > I) && (J > K)){
+            count++;
+            I = J;
+            J = K;
+        }
+        else {
+            I = J;
+            J = K;
+        }
+        scanf("%d", &K);    
+    }
+    printf("%d", count);
+    return 0;
+}

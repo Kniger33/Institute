@@ -1,0 +1,29 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "FindWord.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm3 *Form3;
+//---------------------------------------------------------------------------
+__fastcall TForm3::TForm3(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm3::FormShow(TObject *Sender)
+{
+	StringGrid1->ColWidths[0] = 50;
+	for(int i = 1; i < 4; i++){StringGrid1->ColWidths[i] = 100;}
+	StringGrid1->ColWidths[4] = 235;
+
+	StringGrid1->Cells[0][0] = "Код";
+	StringGrid1->Cells[1][0] = "Название";
+	StringGrid1->Cells[2][0] = "Отдел";
+	StringGrid1->Cells[3][0] = "Цена";
+	StringGrid1->Cells[4][0] = "Информация";
+}
+//---------------------------------------------------------------------------

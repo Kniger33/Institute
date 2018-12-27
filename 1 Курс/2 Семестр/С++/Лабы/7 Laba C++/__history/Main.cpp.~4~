@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Main.h"
+//#include "Product.h"
+#include <vector>
+#include "Add.h"
+#include <string>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+vector <Product> prodVect;
+using namespace std;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	Application->CreateForm(__classid(TForm2), &Form2);
+	Form2->ShowModal();
+	Form2->Free();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormShow(TObject *Sender)
+{
+    char symb;
+	int countOfNames = 0;
+	for(int i = 0; i < prodVect.size(); i++)	{
+		symb = prodVect[i].FirstSymbolOfName();
+		if (symb == 'к' || symb == 'К' || symb == 'k' || symb == 'K')
+		countOfNames++;
+	}
+	Label2->Caption = "Количество товаров на букву \"K\": " + IntToStr(countOfNames);
+
+	int countOfProducts = 0;
+	for (int i = 0; i < prodVect.size(); i++){if (prodVect[i].getCost() > 1000){countOfProducts++;}}
+	Label3->Caption = "Количество товаров стоимостью больше 1000: " + IntToStr(countOfProducts);
+}
+//---------------------------------------------------------------------------
+

@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+\usepackage[english, russian]{babel}
+\usepackage[russian]{}
+\usepackage[utf8x]{inputenc}
+\usepackage{mathtext}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\begin{document}
+\subsection*{2.1. Формулы вычисления неопределенного интеграла:}
+\begin{math}
+$\par$
+\int \frac{dx}{a^2 + x^2}= \frac 1a arctg \frac xa + C \; \; (a \neq 0)
+$\par$
+$\par$
+$\par$
+\int \frac{dx}{\sqrt[]{x^2\pm a^2}}=ln\;\vert x + \sqrt[]{x^2\pm a^2}\vert \; + \; C \; \; (a > 0)
+\end{math}
+\subsection*{2.2. Формула Тейлора с остаточным членом в форме Лагранжа:}
+\begin{math}
+$\par$
+f(x)=\sum_{k=0}^{n-1} \frac{f^{(k)}(a)}{k!}(x-a)^k + \frac{f{(n)}(a+\theta (x-a))}{n!}(x-a)^n \;\;\;\; (0<\theta <1)
+\end{math}
+\subsection*{2.3. Единичная матрица}
+\begin{math}
+\begin{pmatrix}
+$\par$
+  1\;\;\; 0\;\;\; 0\\
+  0\;\;\; 1\;\;\; 0\\
+  0\;\;\; 0\;\;\; 1\\
+\end{pmatrix}
+\end{math}
+\subsection*{2.4. Функции}
+$$f(x)=\left\{
+\begin{aligned}
+cos\frac{\pi x}2,\;\vert x\vert\le 1 ; \\
+\vert x-1 \vert,\; \vert x\vert > 1.
+\end{aligned}
+\right.$$
+\par
+\par
+\begin{math}
+\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;y=\lim_{n\to\infty} \sqrt[n]{1+x^{2n}}
+\end{math}
+\end{document}

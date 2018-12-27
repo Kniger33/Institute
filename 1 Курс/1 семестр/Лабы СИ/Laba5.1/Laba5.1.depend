@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1513835617 source:c:\users\lenovo\desktop\laba5.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"myS.h"
+
+1513835610 c:\users\lenovo\desktop\laba5.1\mys.h
+

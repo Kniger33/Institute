@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int main () {
+
+    int N, count = 0, i;
+    scanf("%d", &N);
+    int mas [N];
+
+
+    for (i = 0; i < N; i++){
+        scanf("%d", &mas[i]);
+        if (mas[i] != mas[i - 1]) {
+            count++;
+        }
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
+

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+
+    int N, i, j, count = 0;
+    scanf("%d", &N);
+    int mas [N], mas2[N];
+
+    for (i = 0; i < N; i++) {
+        scanf("%d", &mas[i]);
+    }
+    for (i = 0; i < N ; i++) {
+        for(j = 0; j < N; j++) {
+            if (mas[i] == mas[j]) {
+                count++;
+            }
+        }
+        
+        if (count == 1) {
+            
+            printf("%d ", mas[i]);
+        }
+        count = 0;
+    }
+
+    return 0;
+}
+

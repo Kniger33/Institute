@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, M, count = 0, num = 1;
+
+    scanf("%d%d", &N, &M);
+    int mas [N][M];
+
+     int i, j, tmp;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            scanf("%d", &mas[i][j]);
+        }
+    }
+    int a, b;
+    scanf("%d%d", &a, &b);
+
+
+
+    for (i = 0; i < N; i++) {
+
+        tmp = mas[i][a];
+        mas[i][a] = mas[i][b];
+        mas[i][b] = tmp;
+
+    }
+
+
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            printf("%d ", mas[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
+

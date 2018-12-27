@@ -1,0 +1,4 @@
+INSERT INTO university.ClassWork (idClassWork, date, theme, Group_has_Subject_Group_idGroup, Group_has_Subject_Subject_idSubject, Group_has_Subject_TypeOfClassWork_idTypeOfClassWork) VALUES (1, '2018-11-28', 'Lab4', 1, 1, 1);
+INSERT INTO university.ClassWork (idClassWork, date, theme, Group_has_Subject_Group_idGroup, Group_has_Subject_Subject_idSubject, Group_has_Subject_TypeOfClassWork_idTypeOfClassWork) VALUES (2, '2018-11-30', 'Number methods', 1, 3, 3);
+INSERT INTO university.ClassWork (idClassWork, date, theme, Group_has_Subject_Group_idGroup, Group_has_Subject_Subject_idSubject, Group_has_Subject_TypeOfClassWork_idTypeOfClassWork) VALUES (3, '2018-11-26', 'Show apps results', 1, 6, 1);
+INSERT INTO university.ClassWork (idClassWork, date, theme, Group_has_Subject_Group_idGroup, Group_has_Subject_Subject_idSubject, Group_has_Subject_TypeOfClassWork_idTypeOfClassWork) VALUES (4, '2018-10-15', 'Predicates', 1, 2, 2);

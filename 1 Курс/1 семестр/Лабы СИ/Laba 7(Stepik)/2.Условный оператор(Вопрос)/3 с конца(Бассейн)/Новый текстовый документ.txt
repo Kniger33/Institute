@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+  
+    int N, M, X, Y;
+    scanf("%d%d", &N, &M);
+    scanf("%d%d", &X, &Y);
+    
+    if (N > M){
+        int a;
+        a = N;
+        N = M;
+        M = a;
+    }
+    int a, b, min1, min2;
+    a = N - X;
+    b = M - Y;
+    if(X < Y){
+        min1 = X;
+    }
+    else {
+        min1 = Y;
+    }
+    if (a < b){
+        min2 = a;
+    }
+    else {
+        min2 = b;
+    }
+    if (min1 < min2){
+        printf("%d", min1);
+    }
+    else {
+        printf("%d", min2);
+    }
+    
+    return 0;
+}

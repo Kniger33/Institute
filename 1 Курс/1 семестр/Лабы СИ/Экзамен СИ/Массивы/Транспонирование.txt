@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, M, tmp;
+
+    scanf("%d%d", &N, &M);
+    int mas [N][M];
+    int i, j;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            scanf("%d", &mas[i][j]);
+        }
+    }
+
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%d ", mas[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+

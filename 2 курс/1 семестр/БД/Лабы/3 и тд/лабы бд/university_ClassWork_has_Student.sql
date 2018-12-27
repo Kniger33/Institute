@@ -1,0 +1,12 @@
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (1, 1, 1);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (1, 2, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (1, 3, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (1, 4, 1);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (2, 1, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (2, 2, 0);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (2, 3, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (2, 4, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (3, 1, 0);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (3, 2, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (3, 3, 2);
+INSERT INTO university.ClassWork_has_Student (ClassWork_idClassWork, Student_idStudent, typeOfMiss) VALUES (3, 4, 1);

@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+#include "myF.h"
+
+
+struct data {
+    int number;
+    char sec_name[15];
+    char name[15];
+    char patronym[15];          //Отчество
+    char discp[4][15];
+    int mark[4];
+    double Smark;
+};
+
+int main(){
+
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    int act = 1, count = 0, num;
+
+
+
+    while (act)
+    {
+        count = mySearch();
+    printf("\n%d\n", count);
+        int com;
+        int result;
+        printf("Выберите действие: \n Добавить студента - 1\n Удалить студента - 2\n Выбор студента - 3\n Показать всех студентов - 4\n Закрыть программу - 0\n  ");
+        scanf("%d", &com);
+        switch(com)
+        {
+            //ДОБАВЛЕНИЕ СТУДЕНТА
+            case 1: {
+                system("cls");
+                result = add_student();
+                count++;
+                if (result == 0) {
+                    printf("Студент занесен в список\n\n");
+                } else if (result == 1) {
+                    printf("Такой студент уже есть\n\n");
+                } else {
+                    printf("Ошибка создания или открытия файла\n\n");
+                }
+                break;
+            }
+            //УДАЛЕНИЕ СТУДЕНТА
+            case 2: {
+                system("cls");
+                result = del_student();
+                count--;
+                if (result == 0) {
+                    printf("Такой студент найден:\n\n");
+                } else if (result == 1) {
+                    printf("Такого студента нет\n\n");
+                } else {
+                    printf("Ошибка открытия файла\n\n");
+                }
+                break;
+            }
+            //ВЫБОР СТУДЕНТА
+            case 3: {
+                system("cls");
+                int com2;
+                printf("Выбор студента: \n");
+                printf("Выберите, как его найти:\n По номеру зачетки - 1\n По имени - 2\n По средней оценке - 3  ");
+                scanf("%d", &com2);
+                switch(com2)
+                {
+                    //ВЫБОР ПО НОМЕРУ ЗАЧЁТКИ
+                    case 1: {
+
+                        record_book(); break;
+                    }
+                    //ВЫБОР ПО ФИО
+                    case 2: {
+                        select_fio_of_student();break;
+                    }
+                    //ВЫБОР ПО ОЦЕНКЕ
+                    case 3: {
+                        mark_of_student(count); break;
+                    }
+                    default: {
+                        printf("Неправильная команда/Такой не существует.Попробуйте ещё раз\n");
+                    }
+                }
+                break;
+            }
+
+            //ВЫВОД ВСЕХ СТУДЕНТОВ
+            case 4: {
+                system("cls");
+                all_students();
+                break;
+            }
+            case 0: {
+
+                act = 0;
+                break;
+            }
+            default: {
+                printf("\nНеправильная команда/Такой не существует.Попробуйте ещё раз\n");
+            }
+        }
+        system("cls");
+    }
+    return 0;
+}
+

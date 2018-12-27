@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, count = 0, num = 1;
+
+    scanf("%d", &N);
+    int mas [N][N];
+
+    int i, j;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            if (i == j) {
+                mas[i][j] = 0;
+            }
+            else {
+                mas[i][j] = fabs(i - j);
+            }
+        }
+    }
+
+
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%d ", mas[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
+

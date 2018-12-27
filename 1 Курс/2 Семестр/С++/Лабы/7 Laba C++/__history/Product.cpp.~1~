@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include "Product.h"
+
+    // ŒÕ—“–” “Œ–
+    Product(int i, string n, string d, int c, string inf)
+    {
+        id = i;
+        name = n;
+        department = d;
+        cost = c;
+        information = inf;
+    }
+	Product(const Product &some_obj);
+    string getDep(){return department;}
+    string getName(){return name;}
+    string getInfo(){return information;}
+    char FirstSymbolOfName(){return name[0];}
+    int getCost(){return cost;}
+    int getId(){return id;}
+    ~Product(){cout << "¬ÒÂ Ó˜Ë˘ÂÌÓ!" << endl;}

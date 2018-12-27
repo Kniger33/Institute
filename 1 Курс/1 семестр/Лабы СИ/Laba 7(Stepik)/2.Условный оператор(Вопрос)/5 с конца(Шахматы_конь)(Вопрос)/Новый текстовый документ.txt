@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+  
+    int x1, x2, y1, y2;
+    scanf("%d%d", &y1, &x1);
+    scanf("%d%d", &y2, &x2);
+   
+    if ( ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)) == 5 || ((x2 - x1) * (x2 - x1) + (y1 - y2) * (y1 - y2)) == 5 ||  ((x2     - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)) == 5 ||  ((x1 - x2) * (x1 - x2) + (y2 - y1) * (y2 - y1)) == 5  ){
+        printf("YES");
+    }
+        else {
+            printf("NO");
+        }
+    
+    return 0;
+}

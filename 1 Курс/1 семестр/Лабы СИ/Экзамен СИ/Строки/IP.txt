@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    int flag = 0, length, i , j, num, poz;
+    char str2[3];
+    char str[20];
+
+    scanf("%s", &str);
+
+    length = strlen(str);
+
+    //Проверка на длину
+    if ((length < 7) && (length > 15)) {
+        flag = 1;
+
+    }
+
+    //Проверка на три точки
+    int count = 0;
+    for (i = 0; i < length; i++) {
+        if (str[i] == '.') {
+            count++;
+        }
+    }
+    if (count != 3) {
+        flag = 1;
+
+    }
+
+    //Проверка на две/три подряд идущие точки
+    for (i = 0; i < length; i++) {
+        if (((str[i] == '.') && (str [i + 1] == '.')) || ((str[i] == '.') && (str [i + 1] == '.') && (str [i + 2] == '.'))) {
+            flag = 1;
+            break;
+        }
+    }
+
+    //Проверка первого и последнего символа на точку
+    if ((str[length - 1] == '.') || (str[0] == '.')) {
+        flag = 1;
+    }
+
+    //Проверка ,если символ не является числом
+    for (i = 0; i < length; i++) {
+        if (((str[i] < '0') || (str[i] > '9')) && (str [i] != '.') ) {
+            flag = 1;
+            break;
+        }
+    }
+
+    //Проверка самих символов
+    j = 0;
+    count = 0;
+    poz = 0;
+
+    for (i = 0; i < 4; i++) {
+        while ((str [j] != '.') && (str[j] != '\0')) {
+            count++;
+            j++;
+        }
+
+        str2[0] = 'x';
+        str2[1] = 'x';
+        str2[2] = 'x';
+        if (count > 3) {
+            flag = 1;
+            break;
+        }
+
+        strncpy(str2, str + poz, count);
+        num = atoi(str2);
+        poz = poz + count + 1 ;
+        j++;
+        count = 0;
+
+        if ((num < 0) || (num > 255)) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag == 0) {
+        printf("YES");
+
+    }
+    else {
+        printf("NO");
+    }
+
+    return 0;
+}

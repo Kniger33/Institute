@@ -1,0 +1,393 @@
+create trigger InsertValidAlbumName
+  before INSERT
+  on album
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidAlbumName
+  before UPDATE
+  on album
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValueDateCost
+  before INSERT
+  on cost
+  for each row
+  begin
+    if(NEW.Cost > 0 and NEW.Mark < 6)then
+      set @Mark = NEW.Mark;
+    else
+      signal sqlstate '45000' set message_text = 'Field "Mark" should be more than 0 and less than 6!';
+    end if;
+  end;
+
+create trigger InsertValueOfMark
+  before insert 
+  on comment
+  for each row
+  begin
+    if(NEW.Mark > 0 and NEW.Mark < 6)then
+      set @Mark = NEW.Mark;
+    else
+      signal sqlstate '45000' set message_text = 'Field "Mark" should be more than 0 and less than 6!';
+    end if;
+  end;
+
+create trigger InsertValidCompositionDuration
+  before INSERT
+  on composition
+  for each row
+  begin 
+    if NEW.Duration > 0 then 
+      set @Duration = NEW.Duration;
+    else 
+      signal sqlstate '45000' set message_text = "Duration cannot be negative!";
+    end if;
+  end;
+
+create trigger InsertValidCompositionName
+  before INSERT
+  on composition
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidCompositionDuration
+  before UPDATE
+  on composition
+  for each row
+  begin
+    if NEW.Duration > 0 then
+      set @Duration = NEW.Duration;
+    else
+      signal sqlstate '45000' set message_text = "Duration cannot be negative!";
+    end if;
+  end;
+
+create trigger UpdateValidCompositionName
+  before UPDATE
+  on composition
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidCostDate
+  before INSERT
+  on cost
+  for each row
+  begin
+    if NEW.EndDate != null then
+      if datediff(New.EndDate, NEW.StartDate) >= 0 then
+        set @StartDate = NEW.StartDate;
+        set @EndDate = NEW.EndDate;
+      else
+        signal sqlstate '45000' set message_text = 'Value isn\'t valid!';
+      end if;
+      else
+        set @StartDate = NEW.StartDate;
+    end if;
+  end;
+
+create trigger UpdateValidCostDate
+  before UPDATE
+  on cost
+  for each row
+  begin
+    if NEW.EndDate is null then
+      set @EndDate = NEW.EndDate;
+    else
+      if datediff(New.EndDate, NEW.StartDate) >= 0
+        or datediff(New.EndDate, OLD.StartDate) >= 0 then
+          set @StartDate = NEW.StartDate;
+          set @EndDate = NEW.EndDate;
+      else
+        signal sqlstate '45000' set message_text = 'Value isn\'t valid!';
+      end if;
+    end if;
+  end;
+
+
+create trigger InsertValidGenre
+  before INSERT
+  on genre
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß-]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidGenre
+  before UPDATE
+  on genre
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß-]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidLanguage
+  before INSERT
+  on language
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidLanguage
+  before UPDATE
+  on language
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidMusicianName
+  before INSERT
+  on musician
+  for each row
+  begin
+    if NEW.LastName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.FirstName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.MidName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @LastName = NEW.LastName;
+      set @FirstName = NEW.FirstName;
+      set @MidName = NEW.MidName;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidMusicianName
+  before UPDATE
+  on musician
+  for each row
+  begin
+    if NEW.LastName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.FirstName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.MidName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @LastName = NEW.LastName;
+      set @FirstName = NEW.FirstName;
+      set @MidName = NEW.MidName;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidOrderStatus
+  before INSERT
+  on `order`
+  for each row
+  begin
+    if NEW.Status regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Status = NEW.Status;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidOrderStatus
+  before UPDATE
+  on `order`
+  for each row
+  begin
+    if NEW.Status regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Status = NEW.Status;
+      else
+      signal sqlstate '45000' set message_text = 'Status isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidPerformerName
+  before insert
+  on performer
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidPerformerName
+  before update 
+  on performer
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidStartEndDate
+  before INSERT
+  on performer_has_musician
+  for each row
+  begin
+    if datediff(New.EndDate, NEW.StartDate) >= 0 then 
+        set @StartDate = NEW.StartDate;
+        set @EndDate = NEW.EndDate;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid!';
+    end if;
+  end;
+
+create trigger UpdateValidStartEndDate
+  before UPDATE
+  on performer_has_musician
+  for each row
+  begin
+    if datediff(New.EndDate, NEW.StartDate) >= 0 then 
+        set @StartDate = NEW.StartDate;
+        set @EndDate = NEW.EndDate;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid!';
+    end if;
+  end;
+
+create trigger InsertValidProfession
+  before INSERT
+  on profession
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß-]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidProfession
+  before UPDATE
+  on profession
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß-]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidTypeOfFile
+  before INSERT
+  on typeoffile
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß.]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidTypeOfFile
+  before UPDATE
+  on typeoffile
+  for each row
+  begin
+    if NEW.Name regexp '^[a-zA-Zà-ÿÀ-ß.]+$' != '' then
+      set @Name = NEW.Name;
+      else
+      signal sqlstate '45000' set message_text = 'Name isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidUserName
+  before INSERT
+  on user
+  for each row
+  begin
+    if NEW.LastName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.FirstName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.MidName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @LastName = NEW.LastName;
+      set @FirstName = NEW.FirstName;
+      set @MidName = NEW.MidName;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger InsertValidUserTelephone
+  before INSERT
+  on user
+  for each row
+  begin
+    if NEW.Telephone regexp '^[0-9]+$'then
+      set @Telephone = NEW.Telephone;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidUserName
+  before UPDATE
+  on user
+  for each row
+  begin
+    if NEW.LastName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.FirstName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != ''
+      and NEW.MidName regexp '^[a-zA-Zà-ÿÀ-ß]+$' != '' then
+      set @LastName = NEW.LastName;
+      set @FirstName = NEW.FirstName;
+      set @MidName = NEW.MidName;
+    else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+create trigger UpdateValidUserTelephone
+  before UPDATE
+  on user
+  for each row
+  begin
+    if NEW.Telephone regexp '^[0-9]+$'then
+      set @Telephone = NEW.Telephone;
+      else
+      signal sqlstate '45000' set message_text = 'Value isn\'t valid';
+    end if;
+  end;
+
+
+
+

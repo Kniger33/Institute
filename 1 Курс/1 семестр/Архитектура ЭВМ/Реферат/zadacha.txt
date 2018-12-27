@@ -1,0 +1,106 @@
+S_S segment stack
+	db	100h dup(?)		; Резервируем память
+S_S ends
+D_S segment
+	res_fak_val	dw	1	; Результат вычисления факториала с передачей аргумента по значению
+    error db "incorrect number$"
+    buff    db 6,7 Dup(?)
+D_S ends
+C_S segment
+assume cs:C_S, ss:S_S, ds:D_S, es:D_S
+start:
+
+; Инициализация сегментных регистров
+mov ax, D_S
+mov ds, ax
+ 
+ mov ah,0ah
+ xor di,di
+ mov dx,offset buff ; аддрес буфера
+ int 21h ; принимаем строку
+ mov dl,0ah
+ mov ah,02
+ int 21h ; выводим перевода строки
+    
+; обрабатываем содержимое буфера
+    mov si,offset buff+2 ; берем аддрес начала строки
+    cmp byte ptr [si],"-" ; если первый символ минус
+    jnz ii1
+    mov di,1  ; устанавливаем флаг
+    inc si    ; и пропускаем его
+ii1:
+    xor ax,ax
+    mov bx,10  ; основание сc
+ii2:
+    mov cl,[si] ; берем символ из буфера
+    cmp cl,0dh  ; проверяем не последний ли он
+    jz endin
+  
+; если символ не последний, то проверяем его на правильность
+    cmp cl,'0'  ; если введен неверный символ <0
+    jb er
+    cmp cl,'9'  ; если введен неверный символ >9
+    ja er
+ 
+    sub cl,'0' ; делаем из символа число 
+    mul bx     ; умножаем на 10
+    add ax,cx  ; прибавляем к остальным
+    inc si     ; указатель на следующий символ
+    jmp ii2     ; повторяем
+ 
+er:   ; если была ошибка, то выводим сообщение об этом и выходим
+    mov dx, offset error
+
+    mov ah,09
+    int 21h
+    int 20h 
+; все символы из буфера обработаны число находится в ax
+endin:
+    cmp di,1 ; если установлен флаг, то
+    jnz FACT
+    neg ax   ; делаем число отрицательным
+
+FACT: 
+; Вычисление факториала числа с передачей аргумента по значению
+	push	ax
+	call	fak_val
+;Вывод результата на экран	
+    aam 
+    add ax,3030h 
+    mov dl,ah 
+    mov dh,al 
+    mov ah,02 
+    int 21h 
+    mov dl,dh 
+    int 21h
+
+; Завершение программы
+mov	ax, 4c00h
+int 21h
+	
+	; Вычисление факторила 
+	; Входные параметры в стеке:
+	; dw - число, факториал которого необходимо вычислить
+	; Результат:
+	; dw res_fak_val - факториал числа
+	fak_val proc
+		mov	bp, sp
+		mov	bx, [bp+2]	; Число, факториал которого вычисляется
+
+		cmp	bx, 1
+		jz fak_end		; Есил bx = 1, остановить рекурсию
+		
+		mov	ax, res_fak_val
+		mul	bx
+		mov	res_fak_val, ax
+		dec bx
+		push	bx
+		call fak_val
+	
+	fak_end:
+		ret 2
+		
+	fak_val endp
+	
+C_S ends
+end start

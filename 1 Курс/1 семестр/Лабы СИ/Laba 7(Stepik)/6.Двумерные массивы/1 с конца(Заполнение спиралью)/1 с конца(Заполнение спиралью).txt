@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+
+    int n, m, i, j, r = 0, c = 0,  num = 1, n1, m1;
+    scanf("%d%d", &n, &m);
+
+    n1 = n;
+    m1 = m;
+
+    int mas[n][m];
+
+    while (num <= n1 * m1) {
+
+        for (j = c; j < m; j++) {
+            mas[r][j] = num;
+            num++;
+        }
+        r++;
+
+        if (num > n1 * m1) {
+            break;
+        }
+
+        for (i = r; i < n; i++) {
+            mas[i][m - 1] = num;
+            num++;
+        }
+        m--;
+
+        if (num > n1 * m1) {
+            break;
+        }
+
+        for (j = m - 1; j > c - 1; j--) {
+            mas[n - 1][j] = num;
+            num++;
+        }
+        n--;
+
+        if (num > n1 * m1) {
+            break;
+        }
+
+        for (i = n - 1; i > r - 1; i--) {
+            mas[i][c] = num;
+            num++;
+        }
+        c++;
+    }
+
+    for (i = 0; i < n1; i++) {
+        for (j = 0; j < m1; j++) {
+            printf("%4d", mas[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}

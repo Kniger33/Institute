@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+int main() {
+
+    int i, max = 0, id = 0, count = 0;
+
+    char str[100];
+    gets(str);
+
+    int length = strlen(str);
+    for (i = 0; i < length; i++) {
+
+        if (str[i] != ' ') {
+            count++;
+        }
+        else {
+            if (count > max) {
+                max = count;
+                id = i - count;
+            }
+            count = 0;
+        }
+    }
+    if (count > max) {
+        max = count;
+        id = i - count;
+    }
+
+    max += id;
+    for (i = id; i < max; i++) {
+        putchar(str[i]);
+    }
+    return 0;
+
+}

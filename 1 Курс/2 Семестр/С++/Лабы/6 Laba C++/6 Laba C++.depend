@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1526708719 source:c:\users\lenovo\desktop\6 laba c++\main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<windows.h>
+	<cctype>
+	<vector>
+

@@ -1,0 +1,18 @@
+select c.Name, Duration, c.ReleaseDate, c.DownLoadLink from composition c
+ inner join album a on c.Album_idAlbum = a.idAlbum
+  where lower(a.Name) = lower('Origins')
+select * from composition;
+select LastName, FirstName, MidName, Birhday, StartDate, EndDate from musician
+  inner join performer_has_musician phm on musician.idMusician = phm.Musician_idMusician
+  inner join performer p on phm.Performer_idPerformer = p.idPerformer
+    where p.Name = 'Imagine Dragons'
+select idOrder, Date, Status, Nickname, LastName, FirstName, MidName, Birhday, Mail, Telephone from `order`
+  inner join order_has_composition ohs on `order`.idOrder = ohs.Order_idOrder
+  inner join composition c on ohs.Composition_idComposition = c.idComposition
+  inner join user u on `order`.User_idUser = u.idUser
+    where c.Name = 'Natural'
+select * from user
+select genre.Name from genre
+  inner join composition c on genre.idGenre = c.Genre_idGenre
+  inner join performer p on c.Performer_idPerformer = p.idPerformer
+    where p.Name = 'Imagine Dragons'

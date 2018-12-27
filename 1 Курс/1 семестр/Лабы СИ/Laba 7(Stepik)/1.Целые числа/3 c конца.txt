@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int V, T, s;
+    scanf("%d%d", &V, &T);
+    
+    s = ((V * T) % 109);
+    
+    if (s < 0) {
+         s = 109 + ((V * T) % 109);
+        if (s < 0) {
+            s = -s;
+        }
+    }
+    
+    printf("%d", s);
+    
+    return 0;
+}

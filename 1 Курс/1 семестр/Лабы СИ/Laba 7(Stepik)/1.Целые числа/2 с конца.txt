@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int num, a, b, c, d;
+    scanf("%d", &num);
+    
+    a = num / 1000;
+    b = (num / 100) % 10;
+    c = (num / 10) % 10;
+    d = num % 10;
+    printf("%d", ((a - d) * (a - d) + (b - c) * (b - c)) + 1);
+    
+    return 0;
+}

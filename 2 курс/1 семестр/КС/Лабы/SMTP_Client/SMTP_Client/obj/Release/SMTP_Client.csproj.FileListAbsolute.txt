@@ -1,0 +1,7 @@
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Release\SMTP_Client.exe.config
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Release\SMTP_Client.exe
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Release\SMTP_Client.pdb
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Release\SMTP_Client.csprojAssemblyReference.cache
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Release\SMTP_Client.csproj.CoreCompileInputs.cache
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Release\SMTP_Client.exe
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Release\SMTP_Client.pdb

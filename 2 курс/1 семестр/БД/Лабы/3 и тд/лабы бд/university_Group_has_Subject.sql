@@ -1,0 +1,4 @@
+INSERT INTO university.Group_has_Subject (Group_idGroup, Subject_idSubject, TypeOfClassWork_idTypeOfClassWork, Teacher_idTeacher, hours) VALUES (1, 1, 1, 2, 32);
+INSERT INTO university.Group_has_Subject (Group_idGroup, Subject_idSubject, TypeOfClassWork_idTypeOfClassWork, Teacher_idTeacher, hours) VALUES (1, 2, 2, 6, 22);
+INSERT INTO university.Group_has_Subject (Group_idGroup, Subject_idSubject, TypeOfClassWork_idTypeOfClassWork, Teacher_idTeacher, hours) VALUES (1, 3, 3, 5, 24);
+INSERT INTO university.Group_has_Subject (Group_idGroup, Subject_idSubject, TypeOfClassWork_idTypeOfClassWork, Teacher_idTeacher, hours) VALUES (1, 6, 1, 3, 44);

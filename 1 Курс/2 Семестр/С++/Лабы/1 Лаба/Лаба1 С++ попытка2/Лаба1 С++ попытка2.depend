@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1519211949 source:c:\users\lenovo\desktop\Лаба1 С++ попытка2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"myFunctions.h"
+	<windows.h>
+
+1519211912 c:\users\lenovo\desktop\Лаба1 С++ попытка2\myfunctions.h
+
+1520056726 source:c:\users\lenovo\desktop\Лаба1 С++ попытка2\myfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"myFunctions.h"
+

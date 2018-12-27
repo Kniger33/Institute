@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1524838799 source:c:\users\lenovo\desktop\5 Лаба С++\main.cpp
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+
+1525465074 source:c:\users\lenovo\desktop\Инст\1 Курс\2 Семестр\С++\Лабы\5 Лаба С++\main.cpp
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+

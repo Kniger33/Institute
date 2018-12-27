@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+//Метод Крамера
+
+int main() {
+
+    double a, b, c, d, e, f;
+    double Dx, Dy, D, x, y;
+
+    scanf("%lf%lf%lf%lf%lf%lf", &a, &b, &c, &d, &e, &f);
+
+    printf("%lf %lf", ((e * d) - (b * f)) / ((a * d) - (c * b)), ((f * a) - (c * e)) / ((a * d) - (c * b)));
+
+    return 0;
+}

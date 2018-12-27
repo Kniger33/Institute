@@ -1,0 +1,4 @@
+INSERT INTO university.Student (idStudent, lastName, firstName, midName, birthYear, entryYear, address, isHeadman, Group_idGroup) VALUES (1, 'Shekotihin', 'Sergei', 'Evgeneich', '2000-08-05', '2017-09-01', 'Oktyabrskaya 126', 0, 1);
+INSERT INTO university.Student (idStudent, lastName, firstName, midName, birthYear, entryYear, address, isHeadman, Group_idGroup) VALUES (2, 'Shorin', 'Vladislav', 'Dmirievich', '2000-05-27', '2017-09-01', 'Metallurgov 46', 0, 1);
+INSERT INTO university.Student (idStudent, lastName, firstName, midName, birthYear, entryYear, address, isHeadman, Group_idGroup) VALUES (3, 'Marochkin', 'Maksim', 'Aleksandrovich', '1999-11-13', '2017-09-01', 'Komsomolskaya 32', 0, 1);
+INSERT INTO university.Student (idStudent, lastName, firstName, midName, birthYear, entryYear, address, isHeadman, Group_idGroup) VALUES (4, 'Kozhuhova', 'Olga', 'Andreevna', '2000-03-07', '2017-09-01', 'Komsomolskaya 22', 1, 1);

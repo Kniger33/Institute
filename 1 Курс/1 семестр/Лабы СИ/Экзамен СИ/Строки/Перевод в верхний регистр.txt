@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+char perevod(char s)
+{
+    switch(s)
+    {
+        case 'a': s = 'A'; break;
+        case 'b': s = 'B'; break;
+        case 'c': s = 'C'; break;
+        case 'd': s = 'D'; break;
+        case 'e': s = 'E'; break;
+        case 'f': s = 'F'; break;
+        case 'g': s = 'G'; break;
+        case 'h': s = 'H'; break;
+        case 'i': s = 'I'; break;
+        case 'j': s = 'J'; break;
+        case 'k': s = 'K'; break;
+        case 'l': s = 'L'; break;
+        case 'm': s = 'M'; break;
+        case 'n': s = 'N'; break;
+        case 'o': s = 'O'; break;
+        case 'p': s = 'P'; break;
+        case 'q': s = 'Q'; break;
+        case 'r': s = 'R'; break;
+        case 's': s = 'S'; break;
+        case 't': s = 'T'; break;
+        case 'u': s = 'U'; break;
+        case 'v': s = 'V'; break;
+        case 'w': s = 'W'; break;
+        case 'x': s = 'X'; break;
+        case 'y': s = 'Y'; break;
+        case 'z': s = 'Z'; break;
+    }
+    return s;
+}
+
+int main () {
+
+    char c;
+
+    scanf("%c", &c);
+    printf("%c", perevod(c));
+
+    return 0;
+}

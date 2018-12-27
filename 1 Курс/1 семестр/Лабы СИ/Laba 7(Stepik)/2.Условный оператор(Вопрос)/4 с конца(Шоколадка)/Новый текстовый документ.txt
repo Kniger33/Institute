@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    
+    int N, M, K;
+    scanf("%d%d%d", &N, &M, &K);
+    
+    if ( (K < (N * M)) && ((K % N == 0) || (K % M == 0)) ){
+        printf("YES");        
+    }
+    else {
+        printf("NO");
+    }
+    
+    return 0;
+}

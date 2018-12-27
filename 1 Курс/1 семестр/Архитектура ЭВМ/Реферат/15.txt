@@ -1,0 +1,38 @@
+s_ssegmentstack			;адрес начала сегмента стека
+dw 5 dup(?)				;резервируем 10 байт в сегменте стека
+s_sends				;адрес конца сегмента стека
+
+d_ssegment				;адрес начала сегмента данных
+mas1 db 6, 3, 33, 95, 30, 102, 8	;задаем массив
+d_sends				;адрес конца сегмента кода
+c_ssegment				;адрес начала сегмента кода
+assumess:s_s, ds:d_s, cs:c_s		;определяем, каким регистрам принадлежат адреса 
+begin:					;начало программы
+	movax, d_s				;заносим адрес начала сегмента данных в регистр DS
+	movds, ax
+	movcx, 7				;устанавливаем счётчик цикла
+	movsi, 0				;устанавливаем первый индекс массива
+	movbl, 5
+	
+metka1:
+	mov ax, 00b
+	mov al, mas1[si]
+	movbh, 0
+	movbh, mas1[si]
+	add si, 1
+	div bl
+	cmp ah, 1
+		je c1
+	cmp ah, 3
+		je c1
+
+	loop metka1
+	jmpext
+c1:
+	add dl, bh
+	jmp metka1
+ext:
+mov ax,4ch				;завершение программы
+int 21h
+c_s ends
+end begin

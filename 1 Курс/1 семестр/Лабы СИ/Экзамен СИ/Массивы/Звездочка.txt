@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int n, count, max = 0, i, j, x, y;
+    scanf("%d", &n);
+    char mas[n][n];
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            mas[i][j] = '.';
+        }
+    }
+    //Заполнение строки
+    for(i = 0; i < n; i++) {
+        mas[n / 2][i] = '*';
+    }
+
+    //Заполнение столбца
+    for (i = 0; i < n; i++) {
+        mas[i][n / 2] = '*';
+    }
+
+    //Заполнение главной диагонали
+    for (i = 0; i < n; i++) {
+        mas[i][i] = '*';
+    }
+
+    //Заполнение побочной диагонали
+    for (i = 0; i < n; i++) {
+        mas[i][n - i - 1] = '*';
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%c ", mas[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

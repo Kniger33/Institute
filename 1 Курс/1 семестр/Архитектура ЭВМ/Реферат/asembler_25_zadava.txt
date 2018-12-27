@@ -1,0 +1,173 @@
+s_s segment stack "stack" 
+dw 15 dup(?) 
+s_s ends			;30 байт в сегменте стека 
+
+d_s segment 
+mas dw 10 dup(?)	; вводимый массив 
+num dw (?)			; кратное числу num 
+sum dw (?)			; суммируются 
+sindex dw 0 
+cindex dw 0 
+buff db 6,7 Dup(?) 
+error db "incorrect number$" 
+d_s ends 
+
+c_s segment 
+assume ss:s_s, ds:d_s, cs:c_s 
+begin: 
+mov ax, d_s 
+mov ds, ax 
+; —--------------------------------— 
+
+
+mov cx, 10 
+mov cindex, 10 
+
+repeat: 
+mov ah,0ah 
+xor di,di 
+mov dx,offset buff 	; аддрес буфера 
+int 21h 			; принимаем строку 
+mov dl,0ah 
+mov ah,02 
+int 21h 			; выводим перевода строки 
+
+						; обрабатываем содержимое буфера 
+mov si,offset buff+2 	; берем аддрес начала строки 
+cmp byte ptr [si],"-" 	; если первый символ минус 
+jnz ii1 
+mov di,1 				; устанавливаем флаг 
+inc si 					; и пропускаем его 
+ii1: 
+xor ax,ax 
+mov bx,10 				; основание сc 
+ii2: 
+mov cl,[si] 			; берем символ из буфера 
+cmp cl,0dh 				; проверяем не последний ли он 
+jz endin 
+
+						; если символ не последний,
+						;то проверяем его на правильность 
+cmp cl,'0' 				; если введен неверный символ <0 
+jb er 
+cmp cl,'9' 				; если введен неверный символ >9 
+ja er 
+
+sub cl,'0' 				; делаем из символа число 
+mul bx 					; умножаем на 10 
+add ax,cx 				; прибавляем к остальным 
+inc si 					; указатель на следующий символ 
+jmp ii2 				; повторяем 
+
+er: 					; если была ошибка, то выводим сообщение об этом и выходим 
+mov dx, offset error 
+mov ah,09 
+int 21h 
+int 20h 
+
+						; все символы из буфера обработаны число находится в ax 
+endin: 
+cmp di,1 				; если установлен флаг, то 
+jnz ii3 
+neg ax 					; делаем число отрицательным 
+ii3: 
+
+mov si, sindex 
+mov mas[si], ax 
+add sindex, 2 
+xor cx, cx 
+mov cx, cindex 
+dec cindex 
+
+loop repeat 
+mov num, ax 
+; —--------------------------------— 
+
+
+xor cx, cx 
+xor bx, bx 
+mov cx, 9				; counter 
+xor si, si 
+mov si, 0 
+mov sum, 0 
+mov sindex, 1 
+
+rfind:				; —-------------main code 
+xor ax, ax 
+xor dx, dx 
+mov ax, sindex 
+idiv num 
+cmp dx, 0 
+je dived 
+jmp ndived 
+dived: 
+xor ax, ax 
+mov ax, mas[si] 
+add sum, ax 
+ndived: add si, 2 
+inc sindex 
+
+loop rfind			; —-------main code 
+
+xor ax, ax 
+;-------------------— 
+
+mov ax, sum 
+call Show_AX 
+mov ah,0ah 
+xor di,di 
+mov dx,offset buff 
+int 21h 
+
+mov ah, 4ch 
+int 21h 
+
+Show_AX proc 
+push ax 
+push bx 
+push cx 
+push dx 
+push di 
+
+mov cx, 10 		; cx - основание системы счисления 
+xor di, di 		; di - кол. цифр в числе 
+
+				; если число в ax отрицательное, то 
+				;1) напечатать '-' 
+				;2) сделать ax положительным 
+or ax, ax 
+jns @@Conv 
+push ax 
+mov dx, '-' 
+mov ah, 2 		; ah - функция вывода символа на экран 
+int 21h 
+pop ax 
+
+neg ax 
+
+@@Conv: 
+xor dx, dx 
+div cx 				; dl = num mod 10 
+add dl, '0' 		; перевод в символьный формат 
+inc di 
+push dx 			; складываем в стэк 
+or ax, ax 
+jnz @@Conv 
+					; выводим из стэка на экран 
+@@Show: 
+pop dx 				; dl = очередной символ 
+mov ah, 2 			; ah - функция вывода символа на экран 
+int 21h 
+dec di 				; повторяем пока di<>0 
+jnz @@Show 
+
+pop di 
+pop dx 
+pop cx 
+pop bx 
+pop ax 
+ret 
+Show_AX endp 
+
+c_s ends 
+end begin

@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1515148312 source:c:\users\lenovo\desktop\Ырср6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stud_func.h"
+	<ctype.h>
+	<windows.h>
+
+1515149627 c:\users\lenovo\desktop\Ырср6\stud_func.h
+
+1515149047 source:c:\users\lenovo\desktop\Ырср6\stud_func.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stud_func.h"
+	<ctype.h>
+	<windows.h>
+

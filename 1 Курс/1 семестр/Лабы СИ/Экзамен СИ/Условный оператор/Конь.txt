@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    int a, b, c, d;
+    scanf("%d%d%d%d", &a, &b, &c, &d);
+
+    if (fabs(c - a) == 1 && fabs(d - b) == 2 || fabs(c - a) == 2 && fabs(d - b) == 1) {
+        printf("YES");
+    }
+    else {
+        printf("NO");
+    }
+
+    return 0;
+}

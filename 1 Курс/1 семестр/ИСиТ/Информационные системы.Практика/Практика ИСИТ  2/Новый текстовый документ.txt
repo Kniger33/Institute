@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\usepackage[english, russian]{babel}
+\usepackage[cp1251]{inputenc}
+\begin{document}
+\title{Название документа}
+\author{А.В.Иванов}
+\maketitle
+\begin{abstract}
+Аннотация. Аннотация. Аннотация. Аннотация. Аннотация.Аннотация.
+\end{abstract}
+\section{Заголовок раздела 1 уровня}
+\subsection{Заголовок раздела 2 уровня}
+Текст раздела 2 уровня
+\subsubsection{Заголовок раздела 3 уровня}
+Текст раздела 3 уровня
+\begin{thebibliography}{Литература}
+\bibitem{1} Сюткин Вл. Набор математических формул в LaTeX 2
+\end{thebibliography}
+\end{document}

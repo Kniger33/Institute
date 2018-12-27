@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1522064904 source:c:\users\lenovo\desktop\3 Лаба С++\main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<windows.h>
+	<cctype>
+
+1523079422 source:c:\users\lenovo\desktop\Инст\1 Курс\2 Семестр\С++\Лабы\3 Лаба С++\main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<windows.h>
+	<cctype>
+

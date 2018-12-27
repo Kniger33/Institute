@@ -1,0 +1,14 @@
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.csprojAssemblyReference.cache
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.csproj.CoreCompileInputs.cache
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.exe.config
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.exe
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.pdb
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.exe
+F:\VisualStudio Projects\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.pdb
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.exe.config
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.exe
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\bin\Debug\SMTP_Client.pdb
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.exe
+C:\Users\Lenovo\Desktop\SMTP_Client\SMTP_Client\obj\Debug\SMTP_Client.pdb

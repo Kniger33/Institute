@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int A, N, i, cur = 0;
+    scanf ("%d", &A);
+    
+    int mas[250];
+    mas[0] = 0;
+    mas[1] = 1;
+    for (i = 2; i < 250; i++){
+        mas[i] = mas[i - 1] + mas[i -2];
+    }
+    for (i = 0; i < 250; i++){
+        if (mas[i] == A){
+            N = i;
+        }
+    }
+    
+    for (i = 0; i < 250; i++){
+        if (mas[i] != A){
+            cur++;
+        }
+    }
+    if (cur == 250){
+        printf("-1");
+    }
+    else printf("%d", N);
+    return 0;
+}

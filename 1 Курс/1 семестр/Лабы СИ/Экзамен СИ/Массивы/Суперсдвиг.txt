@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <math.h>
+
+void move_right (int *mas, int *mas2, int N, int k) {
+
+    int i;
+
+    for (i = 0; i < N; i++) {
+        mas2[k] = mas[i];
+        k++;
+        if (k == N) {
+            k = 0;
+        }
+    }
+}
+
+void move_left (int *mas, int *mas2, int N, int k) {
+
+    int i;
+
+    for (i = N - 1; i >= 0; i--) {
+        mas2[N - k - 1] = mas[i];
+        k++;
+        if (N - k - 1 < 0) {
+            k = 0;
+        }
+    }
+}
+
+
+int main () {
+
+    int N, i;
+
+    scanf("%d", &N);
+    int mas[N];
+    int mas2[N];
+
+    for (i = 0; i < N; i++) {
+        scanf("%d", &mas[i]);
+    }
+
+    int k, flag;
+    scanf("%d", &k);
+
+    flag = (k > 0) ? 1 : 0;
+    k = (flag) ? k : -k;
+
+    k = k % N;
+
+    if (flag) {
+        move_right(mas, mas2, N, k);
+    }
+    else {
+        move_left(mas, mas2, N, k);
+    }
+
+    for (i = 0; i < N; i++) {
+        printf("%d ", mas2[i]);
+    }
+
+    return 0;
+}
+

@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+
+    int N, M, count = 1, i_num;
+
+    scanf("%d%d", &N, &M);
+    int mas [N][M];
+    int i, j;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            scanf("%d", &mas[i][j]);
+        }
+    }
+
+    int k;
+    scanf("%d", &k);
+    if (k > M) {
+        printf("0");
+    }
+    else {
+        for (i = 0; i < N; i++) {
+            for (j = 0; j < M - 1; j++) {
+                if (mas[i][j] == 0 && mas [i][j + 1] == mas[i][j]) {
+                    count++;
+                }
+                else {
+                    count = 1;
+                }
+                if (count >= k) {
+                    i_num = i + 1;
+                    break;
+                }
+            }
+            if (count >= k) {
+                break;
+            }
+
+        }
+
+        if (i_num == 0) {
+            printf("0");
+        }
+        else {
+            printf("%d", i_num);
+        }
+    }
+    return 0;
+}
+

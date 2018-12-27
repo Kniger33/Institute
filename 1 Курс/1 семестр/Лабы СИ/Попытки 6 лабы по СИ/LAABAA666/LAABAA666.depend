@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1514300950 source:c:\users\lenovo\desktop\laabaa666\main.c
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	"myF.h"
+
+1514299363 c:\users\lenovo\desktop\laabaa666\myf.h
+
+1514303357 source:c:\users\lenovo\desktop\laabaa666\myf.c
+	<stdio.h>
+	<string.h>
+	"myF.h"
+	<windows.h>
+

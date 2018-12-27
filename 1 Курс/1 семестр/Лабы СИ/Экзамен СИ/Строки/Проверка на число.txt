@@ -1,0 +1,14 @@
+#include "stdio.h" 
+
+int main() { 
+    char symb; 
+    scanf ("%c", &symb); 
+    
+    if (symb >= '0' && symb <= '9') {
+        printf ("yes"); 
+    }
+    else {
+        printf ("no");
+    }
+    return 0;
+}

@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1513777560 source:c:\users\eazy_admin\desktop\prog\training\students\my_string.c
+	<stdlib.h>
+
+1513969425 source:c:\users\eazy_admin\desktop\prog\training\students\students_management.c
+	<stdio.h>
+	<stdlib.h>
+	"students_management.h"
+	"my_string.h"
+
+1513970619 source:c:\users\eazy_admin\desktop\prog\training\students\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"my_string.h"
+	"students_management.h"
+
+1513777558 c:\users\eazy_admin\desktop\prog\training\students\my_string.h
+
+1513969425 c:\users\eazy_admin\desktop\prog\training\students\students_management.h
+
+1513970619 source:c:\users\lenovo\desktop\studentsmisha\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"my_string.h"
+	"students_management.h"
+
+1513777558 c:\users\lenovo\desktop\studentsmisha\my_string.h
+
+1514887984 c:\users\lenovo\desktop\studentsmisha\students_management.h
+
+1513777560 source:c:\users\lenovo\desktop\studentsmisha\my_string.c
+	<stdlib.h>
+
+1513969425 source:c:\users\lenovo\desktop\studentsmisha\students_management.c
+	<stdio.h>
+	<stdlib.h>
+	"students_management.h"
+	"my_string.h"
+

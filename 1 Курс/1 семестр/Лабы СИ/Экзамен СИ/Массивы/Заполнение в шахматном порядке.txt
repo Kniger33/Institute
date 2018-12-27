@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main () {
+
+    int n, m ,i = 0, j = 0, x = 1;
+
+
+    scanf("%d%d", &n, &m);
+    int mas[n][m];
+
+    for (i = 0; i < n; i++){
+        if(i % 2 == 0){
+                for (j = 0; j < m; j+= 2){
+                    mas[i][j] = x;
+                    x++;
+                }
+                for (j = 1; j < m; j+=2){
+                    mas[i][j] = 0;
+                }
+        }
+        else {
+            for (j = 1; j < m; j+= 2){
+                    mas[i][j] = x;
+                    x++;
+            }
+            for (j = 0; j < m; j+=2){
+                    mas[i][j] = 0;
+            }
+        }
+    }
+    /*for (i = 0; i < n; i++){
+        for (j = 0; j < m; j++){
+            printf("%4d ", mas[i][j]);
+        }
+        printf("\n");
+    }
+*/
+    for (i = 0; i < n; i++){
+        for (j = 0; j < m; j++){
+            if (1 % 10 == 1){
+                printf("");
+            }
+            else if (mas[i][j] % 100 == mas[i][j]){
+                printf("  ");
+            }
+            else if (mas[i][j] % 1000 == mas[i][j]){
+                printf(" ");
+            }
+            printf("%4d", mas[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

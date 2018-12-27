@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+
+int main () {
+
+    int N, min = 100000, y, i;
+    scanf("%d", &N);
+    int mas [N];
+
+
+    for (i = 0; i < N; i++){
+        scanf("%d", &mas[i]);
+    }
+
+    for (i = 0; i < N; i++) {
+
+        if (mas[i] < min && mas[i] > 0) {
+
+            min = mas[i];
+        }
+    }
+    printf("%d", min);
+
+    return 0;
+}
+

@@ -1,0 +1,14 @@
+F:\VisualStudio Projects\POP3_Client\POP3_Client\bin\Debug\POP3_Client.exe.config
+F:\VisualStudio Projects\POP3_Client\POP3_Client\bin\Debug\POP3_Client.exe
+F:\VisualStudio Projects\POP3_Client\POP3_Client\bin\Debug\POP3_Client.pdb
+F:\VisualStudio Projects\POP3_Client\POP3_Client\obj\Debug\POP3_Client.csprojAssemblyReference.cache
+F:\VisualStudio Projects\POP3_Client\POP3_Client\obj\Debug\POP3_Client.csproj.CoreCompileInputs.cache
+F:\VisualStudio Projects\POP3_Client\POP3_Client\obj\Debug\POP3_Client.exe
+F:\VisualStudio Projects\POP3_Client\POP3_Client\obj\Debug\POP3_Client.pdb
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\bin\Debug\POP3_Client.exe.config
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\bin\Debug\POP3_Client.exe
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\bin\Debug\POP3_Client.pdb
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\obj\Debug\POP3_Client.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\obj\Debug\POP3_Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\obj\Debug\POP3_Client.exe
+C:\Users\Lenovo\Desktop\POP3_Client\POP3_Client\obj\Debug\POP3_Client.pdb
