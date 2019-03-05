@@ -1,0 +1,17 @@
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb2\Server\Server\bin\Debug\Server.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb2\Server\Server\bin\Debug\Server.pdb
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb2\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb2\Server\Server\obj\Debug\Server.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb2\Server\Server\obj\Debug\Server.pdb
+C:\Users\Maxim\Desktop\Lb2\Server\Server\bin\Debug\Server.exe
+C:\Users\Maxim\Desktop\Lb2\Server\Server\bin\Debug\Server.pdb
+C:\Users\Maxim\Desktop\Lb2\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Maxim\Desktop\Lb2\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Maxim\Desktop\Lb2\Server\Server\obj\Debug\Server.exe
+C:\Users\Maxim\Desktop\Lb2\Server\Server\obj\Debug\Server.pdb
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\bin\Debug\Server.exe
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\bin\Debug\Server.pdb
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\obj\Debug\Server.exe
+C:\Users\vscho\Desktop\Lab2 TCP\Server\Server\obj\Debug\Server.pdb
