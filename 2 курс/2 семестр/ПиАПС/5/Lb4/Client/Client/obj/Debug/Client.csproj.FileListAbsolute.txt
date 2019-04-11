@@ -1,0 +1,8 @@
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\bin\Debug\Client.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\bin\Debug\Client.pdb
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\obj\Debug\Client.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb4\Client\Client\obj\Debug\Client.pdb

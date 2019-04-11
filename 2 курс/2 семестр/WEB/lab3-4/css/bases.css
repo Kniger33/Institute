@@ -1,0 +1,80 @@
+body {
+    font: 11pt Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
+    margin: 0; /* Отступы на странице */
+}
+h4 {
+    font-size: 24px; /* Размер шрифта */
+    margin: 0; /* Убираем отступы */
+}
+
+h3{
+    text-align: center;
+}
+
+a {
+    color: darkred;
+}
+
+#header { /* Верхний блок */
+    background: linear-gradient(to bottom, #ffe000, #799f0c);  /* Цвет фона */
+    padding: 5px; /* Поля вокруг текста */
+}
+#sidebar { /* Навигация */
+    text-align: right; /*выравнивание текста в колонке по правому краю*/
+    float: top; /* Обтекание сверху */
+    width: 95%; /* Ширина колонки */
+    padding: 5px; /* Поля вокруг текста */
+}
+.top-menu  {
+    font-size: 15pt;
+    margin-right: 15px;
+    width: 100%;
+    text-decoration: none;
+}
+.top-menu:hover, .top-menu:visited
+{
+    font-size: 30pt;
+}
+#content { /* Правая колонка */
+   margin: 15px 1% 15px 1%; /* Значения отступов */
+    padding: 10px; /* Поля вокруг текста */
+    width: 90%; /*Ширина колонки*/
+    text-align: justify; /*выравнивание текста в колонке по ширине*/
+}
+#footer { /* Нижний блок */
+    background: linear-gradient(to bottom, #6a9113, #141517); /* Цвет фона */
+    text-align: right; /*выравнивание текста по правому краю*/
+    padding: 10px; /* Поля вокруг текста */
+    color: white; /* Цвет текста */
+    clear: left; /* Отменяем действие float */
+}
+div.img
+{
+    margin:30px;
+    float:left;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+div.img img
+{
+    display:inline;
+    margin: 10px;
+}
+div.img a:hover img
+{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+div.desc
+{
+    text-align:center;
+    margin: 20px;
+}
+
+
+.clear{
+    clear: both;
+}

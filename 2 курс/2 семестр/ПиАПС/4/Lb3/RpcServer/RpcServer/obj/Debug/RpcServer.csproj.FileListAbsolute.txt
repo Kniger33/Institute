@@ -1,0 +1,6 @@
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\obj\Debug\RpcServer.csprojResolveAssemblyReference.cache
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\bin\Debug\RpcServer.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\bin\Debug\RpcServer.pdb
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\obj\Debug\RpcServer.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcServer\RpcServer\obj\Debug\RpcServer.pdb

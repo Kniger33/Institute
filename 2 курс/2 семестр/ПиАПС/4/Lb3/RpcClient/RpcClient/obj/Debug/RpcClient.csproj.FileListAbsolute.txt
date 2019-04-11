@@ -1,0 +1,5 @@
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcClient\RpcClient\bin\Debug\RpcClient.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcClient\RpcClient\bin\Debug\RpcClient.pdb
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcClient\RpcClient\obj\Debug\RpcClient.csprojResolveAssemblyReference.cache
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcClient\RpcClient\obj\Debug\RpcClient.exe
+C:\Users\serge\OneDrive\Рабочий стол\Secret folder\University\ProjArch\Lb3\RpcClient\RpcClient\obj\Debug\RpcClient.pdb

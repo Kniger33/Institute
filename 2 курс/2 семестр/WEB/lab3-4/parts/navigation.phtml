@@ -1,0 +1,16 @@
+<div class="navigation_class">
+    <?php
+    $links = ['Главная' => 'main.php',
+        'Каталог статей' => 'catalog.php',
+        'Контактная информация' => 'about.php',];
+    ?>
+    <div class="top-menu">
+        <?php
+        foreach ($links as $key => $value)
+            echo
+            "<a class=\"nav_link\" href=\"$value\">$key</a>";
+        ?>
+    </div>
+</div>
+<div class="clear">
+</div>
