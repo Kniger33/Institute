@@ -1,4 +1,39 @@
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\vscho\CLionProjects\l5_1
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/vscho/CLionProjects/l5_1/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\vscho\Desktop\Institute\2 курс\2 семестр\WinAPI\Labs\l5_1"
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Check for working C compiler: C:/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/mingw64/bin/gcc.exe -- broken
+CMake Error at C:/Program Files/JetBrains/CLion 2018.3.4/bin/cmake/win/share/cmake-3.13/Modules/CMakeTestCCompiler.cmake:52 (message):
+  The C compiler
+
+    "C:/mingw64/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: C:/Users/vscho/Desktop/Institute/2 РєСѓСЂСЃ/2 СЃРµРјРµСЃС‚СЂ/WinAPI/Labs/l5_1/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command:"C:/mingw64/bin/mingw32-make.exe" "cmTC_dc0df/fast"
+    C:/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_dc0df.dir\build.make CMakeFiles/cmTC_dc0df.dir/build
+    mingw32-make.exe[1]: Entering directory 'C:/Users/vscho/Desktop/Institute/2 СЉС”РЃС‘/2 С‘С…СЊС…С‘Р„РЃ/WinAPI/Labs/l5_1/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building C object CMakeFiles/cmTC_dc0df.dir/testCCompiler.c.obj
+    C:\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_dc0df.dir\testCCompiler.c.obj   -c "C:\Users\vscho\Desktop\Institute\2 в•Ёв•‘в•¤Р“в•¤Рђв•¤Р‘\2 в•¤Р‘в•Ёв•Ўв•Ёв•ќв•Ёв•Ўв•¤Р‘в•¤Р’в•¤Рђ\WinAPI\Labs\l5_1\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+    gcc.exe: error: C:\Users\vscho\Desktop\Institute\2 в•Ёв•‘в•¤Р“в•¤Рђв•¤Р‘\2 в•¤Р‘в•Ёв•Ўв•Ёв•ќв•Ёв•Ўв•¤Р‘в•¤Р’в•¤Рђ\WinAPI\Labs\l5_1\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+    gcc.exe: fatal error: no input files
+    compilation terminated.
+    mingw32-make.exe[1]: *** [CMakeFiles\cmTC_dc0df.dir\build.make:65: CMakeFiles/cmTC_dc0df.dir/testCCompiler.c.obj] Error 1
+    mingw32-make.exe[1]: Leaving directory 'C:/Users/vscho/Desktop/Institute/2 СЉС”РЃС‘/2 С‘С…СЊС…С‘Р„РЃ/WinAPI/Labs/l5_1/cmake-build-debug/CMakeFiles/CMakeTmp'
+    mingw32-make.exe: *** [Makefile:120: cmTC_dc0df/fast] Error 2
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/vscho/Desktop/Institute/2 РєСѓСЂСЃ/2 СЃРµРјРµСЃС‚СЂ/WinAPI/Labs/l5_1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/vscho/Desktop/Institute/2 РєСѓСЂСЃ/2 СЃРµРјРµСЃС‚СЂ/WinAPI/Labs/l5_1/cmake-build-debug/CMakeFiles/CMakeError.log".

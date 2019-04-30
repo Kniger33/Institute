@@ -1,3 +1,0 @@
-C:/Users/vscho/CLionProjects/l5_1/cmake-build-debug/CMakeFiles/l5_1.dir
-C:/Users/vscho/CLionProjects/l5_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/vscho/CLionProjects/l5_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

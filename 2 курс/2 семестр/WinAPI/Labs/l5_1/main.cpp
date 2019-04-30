@@ -252,6 +252,7 @@ char whereTableName[128];
 char operation[64];
 char *operations[8] = {"=", ">", "<", ">=", "<=", "!=", "AND", "OR"};
 bool isWhereCondition = false;
+int it = 0;
 
 LRESULT CALLBACK WndTRProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -517,6 +518,7 @@ LRESULT CALLBACK WndTRProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         break;
                     }
                     EnableWindow(hwndEditTableName, FALSE );
+					EnableWindow(hwndBtnNext, FALSE);
 
                     query.clear();
                     query += "SELECT ";
@@ -566,8 +568,9 @@ LRESULT CALLBACK WndTRProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
                 //Edit - поле ввода значения для сравнения в условии WHERE
                 case CM_EDITBTN_ENTER_VALUE_PRESSED:
                 {
-                    GetWindowText(hwndEnterValue, enteredValue, 128);
-                    if(enteredValue[0] > '0' && enteredValue[0] < '9')
+                    it++;
+                    GetWindowText(hwndEnterValue, enteredValue, 1024);
+                    if((enteredValue[0] >= '0' && enteredValue[0] <= '9') || (enteredValue[1] >= '0' && enteredValue[1] <= '9'))
                     {
                         outQuery += enteredValue;
                         query += enteredValue;
@@ -575,10 +578,15 @@ LRESULT CALLBACK WndTRProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     else
                     {
                         outQuery += "\"";
-                        outQuery += enteredValue;
+                        string tmp = enteredValue;
+                        if(it >= 2)
+                        {
+                            tmp.erase(0, 1);
+                        }
+                        outQuery += tmp;
                         outQuery += "\"";
                         query += "\"";
-                        query += enteredValue;
+                        query += tmp;
                         query += "\"";
                     }
                     SendMessage(hwndQueryStatic, WM_SETTEXT, (WPARAM)0, (LPARAM)" ");
