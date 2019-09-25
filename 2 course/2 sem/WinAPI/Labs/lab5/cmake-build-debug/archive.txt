@@ -1,0 +1,12 @@
+SELECT LastName FROM student
+SELECT FirstName, Birhday FROM student
+SELECT Birhday, FirstName, idStudent, LastName, MidName FROM student
+SELECT MidName FROM student
+SELECT Duration, idComposition, Name, ReleaseDate FROM composition WHERE idComposition > 1 AND idComposition <  6
+SELECT Birhday, FirstName FROM student WHERE idStudent = 1
+SELECT Birhday, FirstName FROM student
+SELECT * FROM student
+SELECT Birhday, FirstName, LastName FROM student
+SELECT * FROM student
+SELECT Birhday, FirstName, idStudent FROM student WHERE idStudent>'2'
+SELECT  FROM student

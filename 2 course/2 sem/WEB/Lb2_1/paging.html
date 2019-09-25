@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="node_modules/twbs-pagination/jquery.twbsPagination.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul class="pagination-sm" id="pagination"></ul>
+
+<script>
+    let films;
+
+    let xmlhttp = function() {
+        return new Promise(function (resolve, reject) {
+            let xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open("GET", "paging.php", true);
+            xmlHttpRequest.onreadystatechange = function () {
+                try {
+                    let obj = JSON.parse(this.responseText);
+                    resolve(obj);
+                }
+                catch (e) {
+
+                }
+            };
+            xmlHttpRequest.send();
+        })
+    };
+    xmlhttp().then(function (response){
+        console.log(response);
+        films = response;
+        $(function () {
+            let pages;
+            if(films.length % 2 === 0){
+                pages = films.length / 2;
+            }else {
+                pages = Math.round(films.length / 2 );
+            }
+            window.pagObj = $('#pagination').twbsPagination ({
+                totalPages: pages,
+                visiblePages: 5,
+                onPageClick: function (event, page) {
+                    for(let i = 0; i < 2; i++)
+                    {
+                        document.getElementById(`idFilm_text.${i}`).innerHTML = "";
+                        document.getElementById(`idImage.${i}`).innerHTML = "";
+                        document.getElementById(`idFilm_rating.${i}`).innerHTML = "";
+                        document.getElementById(`idFilm_genres.${i}`).innerHTML = "";
+                    }
+                    // document.getElementById(`idFilm_text.${1}`).innerHTML = "";
+                    // document.getElementById(`idImage.${1}`).innerHTML = "";
+                    let pageNumber = page;
+                    // if(page === 1)
+                    // {
+                    //     pageNumber = page - 1;
+                    // }
+                    // else
+                    // {
+                    //     pageNumber = page;
+                    // }
+                    let images = [
+                      new Image(),
+                      new Image()
+                    ];
+                    for(let i = 0; i < 2; i++)
+                    {
+                        images[i].width = 160;
+                        images[i].height = 250;
+                        images[i].align = "left";
+                        images[i].vspace = 10;
+                        images[i].hspace = 10;
+                    }
+
+                    images[0].onload = function(){
+                        document.getElementById(`idImage.${0}`).appendChild(images[0]);
+                    };
+                    images[0].src = `./images/${films[(page - 1) * 2].imageName}.jpg`;
+                    document.getElementById(`idFilm_text.${0}`).innerHTML = films[(page - 1) * 2].description;
+                    document.getElementById(`idFilm_rating.${0}`).innerHTML = films[(page - 1) * 2].portalName + ":" + films[(page - 1) * 2].ratingValue;
+                    document.getElementById(`idFilm_genres.${0}`).innerHTML = films[(page - 1) * 2].genres;
+
+                    if((page === pages && films.length % 2 === 0) || page !== pages)
+                    {
+                        document.getElementById(`idFilmBlock.${1}`).hidden = false;
+                        console.log(page);
+                        console.log(pages);
+                        console.log(films.length % 2);
+                        images[1].onload = function(){
+                            document.getElementById(`idImage.${1}`).appendChild(images[1]);
+                        };
+                        images[1].src = `./images/${films[(page - 1) * 2 + 1].imageName}.jpg`;
+                        document.getElementById(`idFilm_text.${1}`).innerHTML = films[(page - 1) * 2 + 1].description;
+                        document.getElementById(`idFilm_rating.${1}`).innerHTML = films[(page - 1) * 2 + 1].portalName + ":" + films[(page - 1) * 2 + 1].ratingValue;
+                        document.getElementById(`idFilm_genres.${1}`).innerHTML = films[(page - 1) * 2 + 1].genres;
+                    }
+                    else
+                    {
+                        console.log("Work");
+                        document.getElementById(`idFilmBlock.${1}`).hidden = true;
+                    }
+                }
+            })
+        });
+    }).catch(function (error){
+        console.log(error)
+    });
+
+    </script>
+</body>
+</html>

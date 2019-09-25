@@ -1,0 +1,9 @@
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Release\TSP_GUI.exe.config
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Release\TSP_GUI.exe
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Release\TSP_GUI.pdb
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.Form1.resources
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.Properties.Resources.resources
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.csproj.GenerateResource.cache
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.csproj.CoreCompileInputs.cache
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.exe
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Release\TSP_GUI.pdb

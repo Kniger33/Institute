@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/vscho/CLionProjects/lab5/main.cpp
+windows.h
+-
+string
+-
+cstdlib
+-
+iostream
+-
+fstream
+-
+vector
+-
+commctrl.h
+-
+mysql.h
+-
+mysqld_error.h
+-
+dshow.h
+-
+stack
+-
+

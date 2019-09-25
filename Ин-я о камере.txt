@@ -1,5 +1,0 @@
-https://docs.unity3d.com/ru/530/Manual/class-Camera.html
-https://docs.unity3d.com/ru/530/Manual/RenderingPaths.html
-
-
-mrdiplodocus@gmail.com

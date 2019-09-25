@@ -1,0 +1,20 @@
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.exe.config
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.exe
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.pdb
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csprojAssemblyReference.cache
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.Form1.resources
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.Properties.Resources.resources
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csproj.GenerateResource.cache
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csproj.CoreCompileInputs.cache
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.exe
+F:\VisualStudio Projects\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.pdb
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.exe.config
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.exe
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\bin\Debug\TSP_GUI.pdb
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csprojAssemblyReference.cache
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.Form1.resources
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.Properties.Resources.resources
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csproj.GenerateResource.cache
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.csproj.CoreCompileInputs.cache
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.exe
+C:\Users\vscho\Desktop\TSP_GUI\TSP_GUI\obj\Debug\TSP_GUI.pdb
