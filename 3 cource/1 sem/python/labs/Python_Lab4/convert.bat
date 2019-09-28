@@ -1,0 +1,1 @@
+C:\Python\Scripts\pyuic5.exe lab4.ui -o lab4.py
