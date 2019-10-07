@@ -3,32 +3,12 @@
 #include <map>
 #include <fstream>
 #include <time.h>
+#include <iomanip>
 #include "Functions.h"
 
 using namespace std;
 
-void DictInsert(map<int, int> &dict, int key)
-{
-    if(dict.find(key) == dict.end())
-    {
-        dict.insert(pair<int, int>(key, 1));
-    }
-    else
-    {
-        dict[key]++;
-    }
-}
-
-void Print(map<int, int> &dict, ofstream &ofstream)
-{
-    map <int, int>::iterator it;
-    for (it = dict.begin(); it != dict.end(); it++)
-    {
-        ofstream << (*it).first << "    " << (*it).second << endl;
-    }
-}
-
-string CreateKey()
+void CreateKeys(int num)
 {
     static const char alphanum[] =
             "0123456789"
@@ -36,25 +16,132 @@ string CreateKey()
             "abcdefghijklmnopqrstuvwxyz";
     string res;
 
-    for (int i = 0; i < 6; ++i)
-    {
-        res += alphanum[rand() % (sizeof(alphanum) - 1)];
-    }
-    cout << "KEY: " << res << endl;
+    ofstream out;
+    out.open("keys.txt");
 
-    return res;
+    if (out.is_open())
+    {
+        for (int i = 0; i < num; ++i)
+        {
+            for (int j = 0; j < 6; ++j)
+            {
+                res += alphanum[rand() % (sizeof(alphanum) - 1)];
+            }
+            out << res << endl;
+            res = "";
+        }
+    }
+
+}
+int CreateTable(int (*method)(int, int), int (*checker)(int, int, int), int M, int keysCount)
+{
+    string key;
+    ifstream in("keys.txt");
+
+    string array[M];
+    vector<int> res;
+
+    int testLimit = M;
+    int j = 0;
+
+    while(j != keysCount)
+    {
+        getline(in, key);
+        int i = 0;
+
+        while(i != testLimit)
+        {
+            int a = checker(method(HashExcludive(key), M), i, M);
+            if(array[a].empty())
+            {
+                array[a] = key;
+                res.push_back(i);
+                break;
+            }
+            else if (array[a] == key)
+            {
+                res.push_back(i);
+                break;
+            }
+            else
+            {
+                i++;
+            }
+//            if(i == testLimit)
+//            {
+//
+//                break;
+//            }
+        }
+        res.push_back(i);
+        j++;
+    }
+
+    int sum = 0;
+    for (int k = 0; k < res.size(); ++k)
+    {
+        //cout << res[k] << endl;
+        sum += res[k];
+    }
+    //cout << "AA" << endl;
+
+    return sum;
 }
 
 int main()
 {
-    int _keysCount = 50;
-    int _M = 512;
+    srand(time(nullptr));
 
-    vector<string> _keys;
+    int _M = 256;
+    int _keysCount = 255;
+    int _maxKeys = 250;
 
-    for (int i = 0; i < _keysCount; ++i)
+    ofstream out;
+    out.open("result.txt");
+
+    int count;
+
+    CreateKeys(_keysCount);
+
+    float data[4][_maxKeys / 10];
+    for (int i = 0; i < 4; ++i)
     {
-        _keys.push_back(CreateKey());
+        for (int j = 0; j < _maxKeys / 10; ++j)
+        {
+            data[i][j] = 0;
+        }
+    }
+
+    for (int k = 10; k <= _maxKeys; k += 10)
+    {
+        count = CreateTable(HashDivision, CheckLinear, _M, k);
+        data[0][k / 10 - 1] += float(count) / k;
+
+        count = CreateTable(HashMultiply, CheckLinear, _M, k);
+        data[1][k / 10 - 1] += float(count) / k;
+
+        count = CreateTable(HashDivision, CheckSquare, _M, k);
+        data[2][k / 10 - 1] += float(count) / k;
+
+        count = CreateTable(HashMultiply, CheckSquare, _M, k);
+        data[3][k / 10 - 1] += float(count) / k;
+    }
+
+    for (int i = 10; i <= _maxKeys; i += 10)
+    {
+        out << i << setw(7);
+    }
+    out << endl;
+
+    out.setf(ios::left);
+    for (int i = 0; i < 4; ++i)
+    {
+        for (int j = 0; j < _maxKeys / 10; ++j)
+        {
+            out << data[i][j] << setprecision(3) << setw(7);
+            //cout << data[i][j] << endl;
+        }
+        out << endl;
     }
 
     return 0;

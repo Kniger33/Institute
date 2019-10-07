@@ -7,16 +7,17 @@
 
 using namespace std;
 
-void DictInsert(map<int, int> &dict, int key)
+void DictInsert(int *dict, int index, int M)
 {
-    if(dict.find(key) == dict.end())
-    {
-        dict.insert(pair<int, int>(key, 1));
-    }
-    else
-    {
-        dict[key]++;
-    }
+
+//    if(dict.find(index) == dict.end())
+//    {
+//        dict.insert(pair<int, int>(index, 0));
+//    }
+//    else
+//    {
+//        dict[index]++;
+//    }
 }
 
 void Print(map<int, int> &dict, ofstream &ofstream)
@@ -40,7 +41,7 @@ string CreateKey()
     {
         res += alphanum[rand() % (sizeof(alphanum) - 1)];
     }
-    cout << "KEY: " << res << endl;
+    //cout << "KEY: " << res << endl;
 
     return res;
 }
@@ -49,13 +50,25 @@ int main() {
 
     srand(time(nullptr));
 
-    int _keysCount = 50;
-    int _M = 64;
+    int _keysCount = 250;
+    int _M = 251;
 
-    map<int, int> dictAddDiv;
-    map<int, int> dictAddMult;
-    map<int, int> dictExcDiv;
-    map<int, int> dictExcMult;
+    int dictAddDiv[_M];
+    for (int k = 0; k < _M; ++k) {
+        dictAddDiv[k] = 0;
+    }
+    int dictAddMult[_M];
+    for (int k = 0; k < _M; ++k) {
+        dictAddMult[k] = 0;
+    }
+    int dictExcDiv[_M];
+    for (int k = 0; k < _M; ++k) {
+        dictExcDiv[k] = 0;
+    }
+    int dictExcMult[_M];
+    for (int k = 0; k < _M; ++k) {
+        dictExcMult[k] = 0;
+    }
 
     vector<string> _keys;
 
@@ -66,37 +79,69 @@ int main() {
 
     for (int i = 0; i < _keysCount; ++i)
     {
-        int key = HashDivision(HashAdditive(_keys[i]), _M);
-        DictInsert(dictAddDiv, key);
+        int index = HashDivision(HashAdditive(_keys[i]), _M);
+        dictAddDiv[index]++;
 
-        key = HashMultiply(HashAdditive(_keys[i]), _M);
-        DictInsert(dictAddMult, key);
+        index = HashMultiply(HashAdditive(_keys[i]), _M);
+        dictAddMult[index]++;
 
-        key = HashDivision(HashExcludive(_keys[i]), _M);
-        DictInsert(dictExcDiv, key);
+        index = HashDivision(HashExcludive(_keys[i]), _M);
+        dictExcDiv[index]++;
 
-        key = HashMultiply(HashExcludive(_keys[i]), _M);
-        DictInsert(dictExcMult, key);
+        index = HashMultiply(HashExcludive(_keys[i]), _M);
+        dictExcMult[index]++;
     }
 
     ofstream fout;
     fout.open("data.txt");
 
     fout << "AddDiv" << endl;
-    fout << "Key   Value" << endl;
-    Print(dictAddDiv, fout);
+    fout << "Value" << endl;
+    for (int j = 0; j < _M; ++j)
+    {
+        if(dictAddDiv[j] != 0)
+        {
+            fout << dictAddDiv[j] - 1 << endl;
+            continue;
+        }
+        fout << dictAddDiv[j] << endl;
+    }
 
     fout << endl << "AddMult" << endl;
-    fout << "Key   Value" << endl;
-    Print(dictAddMult, fout);
+    fout << "Value" << endl;
+    for (int j = 0; j < _M; ++j)
+    {
+        if(dictAddMult[j] != 0)
+        {
+            fout << dictAddMult[j] - 1 << endl;
+            continue;
+        }
+        fout << dictAddMult[j] << endl;
+    }
 
     fout << endl << "ExcDiv" << endl;
-    fout << "Key   Value" << endl;
-    Print(dictExcDiv, fout);
+    fout << "Value" << endl;
+    for (int j = 0; j < _M; ++j)
+    {
+        if(dictExcDiv[j] != 0)
+        {
+            fout << dictExcDiv[j] - 1 << endl;
+            continue;
+        }
+        fout << dictExcDiv[j] << endl;
+    }
 
     fout << endl << "ExcMult" << endl;
-    fout << "Key   Value" << endl;
-    Print(dictExcMult, fout);
+    fout << "Value" << endl;
+    for (int j = 0; j < _M; ++j)
+    {
+        if(dictExcMult[j] != 0)
+        {
+            fout << dictExcMult[j] - 1 << endl;
+            continue;
+        }
+        fout << dictExcMult[j] << endl;
+    }
 
     fout.close();
 

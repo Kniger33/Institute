@@ -7,7 +7,9 @@
 
 int HashDivision(int key, int M);
 int HashMultiply(int key, int M);
-int HashExcludive(string key);
+int HashExcludive(std::string key);
+int CheckLinear(int key, int i, int M);
+int CheckSquare(int key, int i, int M);
 
 
 #endif //ALGORITHMS_LAB6_FUNCTIONS_H
