@@ -1,0 +1,23 @@
+begin
+  if ( ( ! true & false ) | ( true & ! false ) ) then
+      ID := 4 + 5 * 32 / 21 ;
+  else
+      ID := 4 + 5 * 32 / 21 ;
+  while ( ( ! true & false ) | ( true & ! false ) ) do
+      if ( ( ! true & false ) | ( true & ! false ) ) then
+          ID := 4 + 5 * 32 / 21 ;
+      else
+          ID := 4 + 5 * 32 / 21 ;
+  if ( ( ! true & false ) | ( true & ! false ) ) then
+      begin
+          while ( ( ! true & false ) | ( true & ! false ) ) do
+              ID := 4 + 5 * 32 / 21 ;
+      if ( ( ! true & false ) | ( true & ! false ) ) then
+          ID := 4 + 5 * 32 / 21 ;
+      else
+          ID := 4 + 5 * 32 / 21 ;
+      end;
+  else
+      while ( ( ! true & false ) | ( true & ! false ) ) do
+          ID := 4 + 5 * 32 / 21 ;
+end.
