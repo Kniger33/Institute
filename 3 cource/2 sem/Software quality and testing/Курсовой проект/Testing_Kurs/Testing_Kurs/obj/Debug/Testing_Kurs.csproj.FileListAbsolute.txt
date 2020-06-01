@@ -1,0 +1,26 @@
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.exe.config
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.exe
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.pdb
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csprojAssemblyReference.cache
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Form1.resources
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Properties.Resources.resources
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Result.resources
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Test.resources
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.TestingThemes.resources
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csproj.GenerateResource.cache
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.exe
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.pdb
+C:\Users\vscho\source\repos\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csproj.CoreCompileInputs.cache
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.exe.config
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.exe
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\bin\Debug\Testing_Kurs.pdb
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csprojAssemblyReference.cache
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Form1.resources
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Properties.Resources.resources
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Result.resources
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.Test.resources
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.TestingThemes.resources
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csproj.GenerateResource.cache
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.csproj.CoreCompileInputs.cache
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.exe
+C:\Users\vscho\Desktop\Software quality and testing\Курсовой проект\Testing_Kurs\Testing_Kurs\obj\Debug\Testing_Kurs.pdb

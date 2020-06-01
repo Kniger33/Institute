@@ -1,0 +1,11 @@
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.exe
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.deps.json
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.runtimeconfig.json
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.runtimeconfig.dev.json
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.dll
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\bin\Debug\netcoreapp3.1\Testing_Lab_5.pdb
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\obj\Debug\netcoreapp3.1\Testing_Lab_5.csprojAssemblyReference.cache
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\obj\Debug\netcoreapp3.1\Testing_Lab_5.AssemblyInfoInputs.cache
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\obj\Debug\netcoreapp3.1\Testing_Lab_5.AssemblyInfo.cs
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\obj\Debug\netcoreapp3.1\Testing_Lab_5.dll
+C:\Users\vscho\source\repos\Testing_Lab_5\Testing_Lab_5\obj\Debug\netcoreapp3.1\Testing_Lab_5.pdb

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tests>
+  <test>
+    <function>Summ</function>
+    <arg1>1,2</arg1>
+    <arg2>2,1</arg2>
+    <expected>3,3</expected>
+  </test>
+  <test>
+    <function>Summ</function>
+    <arg1>-3,5</arg1>
+    <arg2>-7,9</arg2>
+    <expected>-11,4</expected>
+  </test>
+  <test>
+    <function>Summ</function>
+    <arg1>1,2</arg1>
+    <arg2></arg2>
+    <expected>0</expected>
+  </test>
+</tests>

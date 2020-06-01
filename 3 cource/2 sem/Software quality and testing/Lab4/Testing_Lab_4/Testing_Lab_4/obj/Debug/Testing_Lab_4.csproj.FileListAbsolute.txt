@@ -1,0 +1,9 @@
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\bin\Debug\Testing_Lab_4.exe.config
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\bin\Debug\Testing_Lab_4.exe
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\bin\Debug\Testing_Lab_4.pdb
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.csprojAssemblyReference.cache
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.Form1.resources
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.Properties.Resources.resources
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.csproj.GenerateResource.cache
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.exe
+C:\Users\vscho\source\repos\Testing_Lab_4\Testing_Lab_4\obj\Debug\Testing_Lab_4.pdb
