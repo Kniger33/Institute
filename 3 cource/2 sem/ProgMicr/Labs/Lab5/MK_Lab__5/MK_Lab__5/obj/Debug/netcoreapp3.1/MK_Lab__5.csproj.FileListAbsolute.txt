@@ -20,3 +20,25 @@ C:\Users\vscho\source\repos\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__
 C:\Users\vscho\source\repos\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.dll
 C:\Users\vscho\source\repos\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.pdb
 C:\Users\vscho\source\repos\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.genruntimeconfig.cache
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.exe
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.deps.json
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.runtimeconfig.json
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.runtimeconfig.dev.json
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\MK_Lab__5.pdb
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\System.IO.Ports.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\System.IO.Ports.Native.so
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\System.IO.Ports.Native.so
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\System.IO.Ports.Native.so
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\System.IO.Ports.Native.dylib
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\linux\lib\netstandard2.0\System.IO.Ports.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\osx\lib\netstandard2.0\System.IO.Ports.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.IO.Ports.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.csprojAssemblyReference.cache
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.csproj.CoreCompileInputs.cache
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.AssemblyInfoInputs.cache
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.AssemblyInfo.cs
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.csproj.CopyComplete
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.dll
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.pdb
+C:\Users\vscho\Documents\Institute\3 cource\2 sem\ProgMicr\Labs\Lab5\MK_Lab__5\MK_Lab__5\obj\Debug\netcoreapp3.1\MK_Lab__5.genruntimeconfig.cache

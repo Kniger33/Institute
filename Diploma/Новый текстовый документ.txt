@@ -1,6 +1,0 @@
-.Net Core
-Entity framework
-di container посмотреть (unity, autofac?)
-razor
-iis( internet infirmation services)
-codewars

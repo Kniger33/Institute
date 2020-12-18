@@ -1,0 +1,140 @@
+#%RAML 1.0
+types:
+  Person:
+    properties:
+      firstName:
+        example: Ivan
+        type: string
+      middleName:
+        example: Ivanovich
+        type: string
+      thirdName:
+        example: Ivanov
+        type: string
+      telephoneNumber:
+        example: "8800553535"
+        type: string
+      email:
+        example: Example@email.com
+        type: string
+  Stakeholder:
+    properties:
+      person?:
+        type: Person
+      company:
+        example: CompanyName
+        type: string
+      position:
+        example: analyst
+        type: string
+      interactionGoal:
+        example: increase incomes
+        type: string
+      availableInformation:
+        example: Nothing
+        type: string
+      projectRole:
+        example: User
+        type: string
+      interactionWay:
+        example: email
+        type: string
+  User:
+    properties:
+      person:
+        type: Person
+      login:
+        example: login
+        type: string
+      passwordHash:
+        example: ajdGI83dGK43Sv
+        type: string
+      position:
+        example: analyst
+        type: string
+  Project:
+    properties:
+      name:
+        example: buisness/system analysis automation
+        type: string
+      shortName:
+        example: BSAA
+        type: string
+      description:
+        example: some information about project
+        type: string
+      resource:
+        example: www.github.com/projectReference
+        type: string
+      startDate:
+        example: 2020-07-20
+        type: date-only
+      endDate:
+        example: 2020-07-20
+        type: date-only
+      status:
+        example: Example
+        type: string
+      projectId:
+        example: 1
+        type: number
+        format: int
+title: BSAA_API
+version: "1"
+protocols:
+  - HTTP
+  - HTTPS
+/projects:
+  get:
+    displayName: Get projects list
+    responses:
+      "200":
+        body:
+          application/json:
+            items:
+              properties:
+                projectName:
+                  example: projectName
+                  type: string
+                userPosition:
+                  example: analyst
+                  type: string
+                projectStatus:
+                  example: Active
+                  type: string
+  post:
+    displayName: Create new project
+    responses:
+      "201": {}
+  delete:
+    displayName: Delete project from list
+    responses:
+      "200": {}
+/user:
+  get:
+    displayName: Get User info
+    responses:
+      "200":
+        body:
+          application/json:
+            type: User
+/projects/{project}:
+  get:
+    displayName: Get info about 1 project
+    responses:
+      "200":
+        body:
+          application/json:
+            type: Project
+  delete:
+    responses:
+      "200": {}
+/stakeholders:
+  get:
+    displayName: Get stakeholders list
+    responses:
+      "200":
+        body:
+          application/json:
+            items:
+              type: Stakeholder

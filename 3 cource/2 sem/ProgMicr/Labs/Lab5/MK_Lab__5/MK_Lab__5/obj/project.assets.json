@@ -436,11 +436,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vscho\\source\\repos\\MK_Lab__5\\MK_Lab__5\\MK_Lab__5.csproj",
+      "projectUniqueName": "C:\\Users\\vscho\\Documents\\Institute\\3 cource\\2 sem\\ProgMicr\\Labs\\Lab5\\MK_Lab__5\\MK_Lab__5\\MK_Lab__5.csproj",
       "projectName": "MK_Lab__5",
-      "projectPath": "C:\\Users\\vscho\\source\\repos\\MK_Lab__5\\MK_Lab__5\\MK_Lab__5.csproj",
+      "projectPath": "C:\\Users\\vscho\\Documents\\Institute\\3 cource\\2 sem\\ProgMicr\\Labs\\Lab5\\MK_Lab__5\\MK_Lab__5\\MK_Lab__5.csproj",
       "packagesPath": "C:\\Users\\vscho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vscho\\source\\repos\\MK_Lab__5\\MK_Lab__5\\obj\\",
+      "outputPath": "C:\\Users\\vscho\\Documents\\Institute\\3 cource\\2 sem\\ProgMicr\\Labs\\Lab5\\MK_Lab__5\\MK_Lab__5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vscho\\AppData\\Roaming\\NuGet\\NuGet.Config",
