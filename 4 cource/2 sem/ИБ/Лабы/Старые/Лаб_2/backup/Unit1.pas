@@ -1,0 +1,388 @@
+unit Unit1;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
+interface
+
+uses
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    GroupBox3: TGroupBox;
+    Memo1: TMemo;
+    procedure Button7Click(Sender: TObject);
+    procedure Edit4Change(Sender: TObject);
+    procedure Edit3Change(Sender: TObject);
+    procedure Edit2Change(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+     procedure cl;
+    { Public declarations }
+  end;
+
+
+var
+  Form1: TForm1;
+  fl:boolean;
+
+implementation
+    uses Unit2;
+{$R *.dfm}
+
+procedure Tform1.cl;
+var
+  i:integer;
+begin
+form2.Image1.Canvas.Pen.Color:=clblack;
+form2.Image1.Canvas.Rectangle(-1,-1,601,601);
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+    for i:=1 to 50 do
+      begin
+        form2.Image1.Canvas.MoveTo(7,490-10*i);
+        form2.Image1.Canvas.LineTo(13,490-10*i);
+        form2.Image1.Canvas.MoveTo(10+10*i,487);
+        form2.Image1.Canvas.LineTo(10+10*i,493);
+      end;
+end;
+
+
+
+procedure TForm1.Edit1Change(Sender: TObject);
+begin
+if edit1.Text<>'' then button1.Enabled:=true;
+if edit1.Text='' then button1.Enabled:=false;
+
+end;
+
+procedure TForm1.Edit2Change(Sender: TObject);
+begin
+if edit2.Text<>'' then button2.Enabled:=true;
+if edit2.Text='' then button2.Enabled:=false;
+end;
+
+procedure TForm1.Edit3Change(Sender: TObject);
+begin
+ if (edit3.Text<>'') then fl:=true;
+ if edit3.Text='' then fl:=false;
+end;
+
+procedure TForm1.Edit4Change(Sender: TObject);
+begin
+if (edit4.Text<>'') and (fl=true )then begin button3.Enabled:=true;
+button4.Enabled:=true; button5.Enabled:=true; end;
+if edit4.Text='' then begin button3.Enabled:=false;
+button4.Enabled:=false; button5.Enabled:=false;        end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+button1.Enabled:=false;
+button2.Enabled:=false;
+button3.Enabled:=false;
+button4.Enabled:=false;
+button5.Enabled:=false;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+   str:string;
+   a,i:integer;
+   mas:array[1..100] of integer;
+begin
+ if edit1.Text<>'' then
+ begin
+   cl;
+   memo1.Clear;
+   mas[1]:=strtoint(Edit1.Text);
+   memo1.Lines.Add(inttostr(mas[1]));
+   for i:=2 to 10 do
+     begin
+       mas[i]:=sqr(mas[i-1]);
+       str:=inttostr(mas[i]);
+       if length(str)>2 then
+         begin
+           delete(str,1,1);
+           delete(str,length(str),1);
+         end
+
+         else
+       if length(str)=2 then
+         begin
+           randomize;
+           a:=random(2)+1;
+           delete(str,a,1);
+         end;
+       mas[i]:=strtoint(str);
+       memo1.Lines.Add(inttostr(mas[i]));
+     end;
+
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+    for i:=1 to 50 do
+      begin
+        form2.Image1.Canvas.MoveTo(7,490-10*i);
+        form2.Image1.Canvas.LineTo(13,490-10*i);
+        form2.Image1.Canvas.MoveTo(10+10*i,487);
+        form2.Image1.Canvas.LineTo(10+10*i,493);
+      end;
+    form2.Image1.Canvas.Pen.Color:=clRed;
+    for I := 1 to 10 do
+      begin
+        form2.Image1.Canvas.MoveTo(10+i*10,490);
+        form2.Image1.Canvas.LineTo(10+i*10,490-(mas[i] mod 500));
+      end;
+end;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  a,b:Real;
+  i:integer;
+  mas:array[1..10] of Real;
+  str, str1, str2:string;
+begin
+ if (edit1.Text<>'')and(edit2.Text<>'') then
+ begin
+  memo1.Clear;
+  cl;
+  a:=strtofloat(Edit1.Text);
+  b:=strtofloat(Edit2.Text);
+
+  for i:=1 to 9 do
+    begin
+      mas[i]:= frac(a*i+b);
+      memo1.Lines.add(floattostr(mas[i]));
+    end;
+
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+
+  for i:=1 to 50 do
+    begin
+      form2.Image1.Canvas.MoveTo(7,490-10*i);
+      form2.Image1.Canvas.LineTo(13,490-10*i);
+      form2.Image1.Canvas.MoveTo(10+10*i,487);
+      form2.Image1.Canvas.LineTo(10+10*i,493);
+    end;
+
+  form2.Image1.Canvas.Pen.Color:=clred;
+
+  for I := 1 to 9 do
+    begin
+      form2.Image1.Canvas.MoveTo(10+i*10,490);
+      form2.Image1.Canvas.LineTo(10+i*10,490-Round(mas[i]*10)*10);
+    end;
+end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+
+ n,i,a,b,k, c:integer;
+ mas:array[1..100] of integer;
+begin
+ if ((edit1.Text<>'')and(edit2.Text<>'')and(edit3.Text<>'')and(edit4.Text<>'')) then
+ begin
+  cl;
+  memo1.clear;
+  a:=strtoint(Edit1.Text);
+  b:=strtoint(Edit2.Text);
+  c:=strtoint(Edit3.Text);
+  k:=strtoint(Edit4.Text);
+  n:=10;
+  mas[1]:=k;
+  for i:=2 to n do
+    begin
+      mas[i]:=(a*mas[i-1]+b) mod c;
+      memo1.Lines.add(floattostr(mas[i]));
+    end;
+
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+
+  for i:=1 to 50 do
+    begin
+      form2.Image1.Canvas.MoveTo(7,490-10*i);
+      form2.Image1.Canvas.LineTo(13,490-10*i);
+      form2.Image1.Canvas.MoveTo(10+10*i,487);
+      form2.Image1.Canvas.LineTo(10+10*i,493);
+    end;
+
+  form2.Image1.Canvas.Pen.Color:=clgreen;
+
+  for i:=1 to 10 do
+    begin
+      form2.Image1.Canvas.MoveTo(10+i*10,490);
+      form2.Image1.Canvas.LineTo(10+i*10,490-Round(mas[i])*10);
+    end;
+ end;
+
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+ n,i,a,b,k, c:integer;
+ mas:array[1..100] of integer;
+begin
+ if edit4.Text<>'' then
+ begin
+  cl;
+  memo1.Clear;
+  b:=0;
+  c:=2;
+  k:=strtoint(Edit4.Text);
+  n:=10;
+  for i:=1 to n do
+    c:=c*2;
+  mas[1]:=k;
+  for i:=2 to n do
+    begin
+      a:=3+8*i;
+      mas[i]:=(a*mas[i-1]+b) mod c;
+      memo1.Lines.add(floattostr(mas[i]));
+    end;
+
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+
+  for i:=1 to 50 do
+    begin
+      form2.Image1.Canvas.MoveTo(7,490-10*i);
+      form2.Image1.Canvas.LineTo(13,490-10*i);
+      form2.Image1.Canvas.MoveTo(10+10*i,487);
+      form2.Image1.Canvas.LineTo(10+10*i,493);
+    end;
+
+  form2.Image1.Canvas.Pen.Color:=clgreen;
+
+  for i:=1 to 10 do
+    begin
+      form2.Image1.Canvas.MoveTo(10+i*10,490);
+      form2.Image1.Canvas.LineTo(10+i*10,490-Round(mas[i]/100)*10);
+    end;
+
+end;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  fib:array[1..250] of integer;
+  i, b:integer;
+  a, c:string;
+begin
+ if edit1.Text<>'' then
+ begin
+   cl;
+   memo1.Clear;
+  fib[1] := 0;
+  fib[2] := 1;
+  for i:=3 to 250 do
+    begin
+      fib[i]:=(fib[i-1] + fib[i-2]) mod 10;
+    end;
+  for i:=1 to 250 do
+    begin
+      a:=Edit1.Text;
+      c:=copy(a,1,1);
+      delete(a,1,1);
+      b:=strtoint(c);
+      fib[i]:=fib[i]+b;
+      memo1.Lines.Add(inttostr(fib[i]));
+    end;
+
+    form2.Image1.Canvas.Pen.Color:=clblack;
+    form2.Image1.Canvas.MoveTo(10,0);
+    form2.Image1.Canvas.LineTo(10,500);
+    form2.Image1.Canvas.MoveTo(0,490);
+    form2.Image1.Canvas.LineTo(500,490);
+
+  for i:=1 to 50 do
+    begin
+      form2.Image1.Canvas.MoveTo(7,490-10*i);
+      form2.Image1.Canvas.LineTo(13,490-10*i);
+      form2.Image1.Canvas.MoveTo(10+10*i,487);
+      form2.Image1.Canvas.LineTo(10+10*i,493);
+    end;
+
+    form2.Image1.Canvas.Pen.Color:=clpurple;
+
+  for i:=1 to 20 do
+    begin
+      form2.Image1.Canvas.MoveTo(10+i*10,490);
+      form2.Image1.Canvas.LineTo(10+i*10,490-fib[i]*10);
+    end;
+
+ end;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  i:integer;
+begin
+ form2.Image1.Canvas.Pen.Color:=clblack;
+ form2.image1.Canvas.Rectangle(-1,-1,500,900);
+ edit1.Text:='';
+ edit2.Text:='';
+ edit3.Text:='';
+ edit4.Text:='';
+ memo1.Clear;
+ end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+form2.Show;
+end;
+
+end.

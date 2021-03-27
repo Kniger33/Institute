@@ -1,0 +1,203 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 527
+  ClientWidth = 855
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 64
+    Width = 40
+    Height = 13
+    Caption = #1040#1083#1100#1092#1072': '
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 124
+    Width = 31
+    Height = 13
+    Caption = #1041#1077#1090#1072': '
+  end
+  object Label7: TLabel
+    Left = 496
+    Top = 184
+    Width = 146
+    Height = 13
+    Caption = #1057#1075#1077#1085#1077#1088#1080#1088#1086#1074#1072#1085#1085#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103':'
+  end
+  object StringGrid1: TStringGrid
+    Left = 96
+    Top = 56
+    Width = 721
+    Height = 33
+    ColCount = 11
+    DragCursor = crIBeam
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 0
+    ColWidths = (
+      64
+      64
+      64
+      64
+      64
+      64
+      64
+      64
+      64
+      64
+      64)
+  end
+  object StringGrid2: TStringGrid
+    Left = 96
+    Top = 112
+    Width = 465
+    Height = 33
+    ColCount = 7
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 1
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 96
+    Top = 184
+    Width = 113
+    Height = 105
+    Caption = #1042#1099#1073#1086#1088' '#1043#1055#1063
+    ItemIndex = 0
+    Items.Strings = (
+      #1043#1055#1063'-1'
+      #1043#1055#1063'-2')
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 248
+    Top = 184
+    Width = 209
+    Height = 201
+    Caption = #1042#1072#1088#1080#1072#1085#1090#1099' '#1087#1072#1088#1072#1084#1077#1090#1088#1086#1074' '#1043#1055#1063
+    TabOrder = 3
+    object Label3: TLabel
+      Left = 40
+      Top = 21
+      Width = 18
+      Height = 13
+      Caption = 'K11'
+    end
+    object Label4: TLabel
+      Left = 40
+      Top = 67
+      Width = 12
+      Height = 13
+      Caption = 'F1'
+    end
+    object Label5: TLabel
+      Left = 40
+      Top = 107
+      Width = 12
+      Height = 13
+      Caption = 'K7'
+    end
+    object Label6: TLabel
+      Left = 40
+      Top = 147
+      Width = 12
+      Height = 13
+      Caption = 'F2'
+    end
+    object ComboBox1: TComboBox
+      Left = 40
+      Top = 40
+      Width = 145
+      Height = 21
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 0
+      Text = '1'
+      Items.Strings = (
+        '1'
+        '2')
+    end
+    object ComboBox2: TComboBox
+      Left = 40
+      Top = 80
+      Width = 145
+      Height = 21
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 1
+      Text = '1'
+      Items.Strings = (
+        '1'
+        '2')
+    end
+    object ComboBox3: TComboBox
+      Left = 40
+      Top = 120
+      Width = 145
+      Height = 21
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 2
+      Text = '1'
+      Items.Strings = (
+        '1'
+        '2')
+    end
+    object ComboBox4: TComboBox
+      Left = 40
+      Top = 160
+      Width = 145
+      Height = 21
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 3
+      Text = '1'
+      Items.Strings = (
+        '1'
+        '2')
+    end
+  end
+  object StringGrid3: TStringGrid
+    Left = 496
+    Top = 205
+    Width = 89
+    Height = 305
+    ColCount = 1
+    FixedCols = 0
+    RowCount = 16
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 96
+    Top = 342
+    Width = 75
+    Height = 25
+    Caption = 'Lets go'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 656
+    Top = 236
+    Width = 185
+    Height = 89
+    TabOrder = 6
+  end
+end

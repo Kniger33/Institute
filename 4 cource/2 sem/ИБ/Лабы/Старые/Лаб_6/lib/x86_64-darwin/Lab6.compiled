@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/local/bin/fpc" Date="1504631646"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -Xg -k-framework -kCocoa -l -vewnhibq &quot;-Fi/Users/prismade/Google Drive/Рабочее пространство/course-4.2/IS/Lab6/lib/x86_64-darwin&quot; -Fu/Developer/lazarus/lcl/units/x86_64-darwin/cocoa -Fu/Developer/lazarus/lcl/units/x86_64-darwin -Fu/Developer/lazarus/components/lazutils/lib/x86_64-darwin -Fu/Developer/lazarus/packager/units/x86_64-darwin &quot;-Fu/Users/prismade/Google Drive/Рабочее пространство/course-4.2/IS/Lab6/&quot; &quot;-FU/Users/prismade/Google Drive/Рабочее пространство/course-4.2/IS/Lab6/lib/x86_64-darwin/&quot; &quot;-FE/Users/prismade/Google Drive/Рабочее пространство/course-4.2/IS/Lab6/&quot; &quot;-o/Users/prismade/Google Drive/Рабочее пространство/course-4.2/IS/Lab6/Lab6&quot; -dLCL -dLCLcocoa Lab6.lpr"/>
+</CONFIG>

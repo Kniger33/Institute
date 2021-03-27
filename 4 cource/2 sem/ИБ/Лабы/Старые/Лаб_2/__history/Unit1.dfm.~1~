@@ -1,0 +1,111 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 631
+  ClientWidth = 689
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 161
+    Top = 8
+    Width = 499
+    Height = 572
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 123
+    Width = 147
+    Height = 25
+    Caption = #1040#1083#1075#1086#1088#1080#1090#1084' 1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 8
+    Top = 8
+    Width = 147
+    Height = 21
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 154
+    Width = 147
+    Height = 25
+    Caption = #1040#1083#1075#1086#1088#1080#1090#1084' 2'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 8
+    Top = 185
+    Width = 147
+    Height = 25
+    Caption = #1040#1083#1075#1086#1088#1080#1090#1084' 3'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 8
+    Top = 216
+    Width = 147
+    Height = 25
+    Caption = #1040#1083#1075#1086#1088#1080#1090#1084' 4'
+    TabOrder = 4
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 8
+    Top = 247
+    Width = 147
+    Height = 25
+    Caption = #1040#1083#1075#1086#1088#1080#1090#1084' 5'
+    TabOrder = 5
+    OnClick = Button5Click
+  end
+  object Edit2: TEdit
+    Left = 8
+    Top = 35
+    Width = 147
+    Height = 21
+    TabOrder = 6
+  end
+  object Edit3: TEdit
+    Left = 8
+    Top = 62
+    Width = 147
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit4: TEdit
+    Left = 8
+    Top = 89
+    Width = 147
+    Height = 21
+    TabOrder = 8
+  end
+  object Memo1: TMemo
+    Left = 10
+    Top = 288
+    Width = 145
+    Height = 249
+    TabOrder = 9
+  end
+  object Button6: TButton
+    Left = 8
+    Top = 555
+    Width = 75
+    Height = 25
+    Caption = 'Clear'
+    TabOrder = 10
+    OnClick = Button6Click
+  end
+end

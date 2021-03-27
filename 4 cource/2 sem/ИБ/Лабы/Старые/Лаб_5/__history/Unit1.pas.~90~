@@ -1,0 +1,265 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, StdCtrls, ExtCtrls;
+
+type
+  mas = array [0..10] of byte;
+  mas2 = array [0..6] of byte;
+  mss = array [0..999] of byte;
+  TForm1 = class(TForm)
+    StringGrid1: TStringGrid;
+    Label1: TLabel;
+    StringGrid2: TStringGrid;
+    Label2: TLabel;
+    RadioGroup1: TRadioGroup;
+    GroupBox1: TGroupBox;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    ComboBox4: TComboBox;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+procedure commutationk11(var a: mas; num: integer);
+procedure commutationk7(var a: mas2; num: integer);
+procedure gpch1(k11, f1: byte; var m: mss);
+procedure gpch2(k7, f2: byte; var m: mss);
+
+const
+  num = 1000;
+
+var
+  Form1: TForm1;
+  lrs_first: string = '01010101011';
+  pn_first: string = '1100111';
+
+  k311: mas = (1, 3, 5, 9, 6, 7, 2, 4, 0, 8, 10);
+  k411: mas = (1, 6, 3, 7, 0, 2, 4, 8, 9, 10, 5);
+  k37: mas2 = (2, 4, 6, 1, 3, 0, 5);
+  k47: mas2 = (2, 1, 0, 3, 4, 6, 7);
+  mas1, mas22, mas3, mas4, mas5, mas6: mss;
+implementation
+
+{$R *.dfm}
+
+procedure gpch1(k11, f1: byte; var m: mss);
+var
+  i, j, k, buf, res: integer;
+  pn: mas2;
+  lrs2, lrs: mas;
+begin
+  for i:= 0 to length(lrs) - 1 do // заполн€ем линейный регистр первонач значени€ми
+    lrs[i]:= StrToInt(Form1.StringGrid1.Cells[i, 0]);
+
+  for i:= 0 to length(pn) - 1 do // заполн€ем продвигающий накоп первонач значени€ми
+    pn[i]:= StrToInt(Form1.StringGrid2.Cells[i, 0]);
+
+
+
+  for i:= 0 to num - 1 do begin //внешний
+    res:= random(10) + 1;
+    for k:= 0 to res do begin //снимаем биты через разное кол-во тактов
+      buf:= lrs[10]; //сохр последний элемент
+      lrs2:= lrs;
+      for j:= 0 to 9 do //сдвигаем
+        lrs[j+1]:= lrs2[j];
+      lrs[0]:= buf xor lrs[8]; //образуем новый элемент по формуле
+    end;
+//коммутатор
+    lrs2:= lrs;
+    case k11 of
+      0: commutationk11(lrs2, 311);
+      1: commutationk11(lrs2, 411);
+    end;
+
+//булева функци€ усложнени€
+    case f1 of
+      0: res:= lrs2[1] or lrs2[9] xor lrs2[6] or lrs2[4] * lrs2[5] xor lrs2[10];
+      1: res:= lrs2[2] or lrs2[8] xor lrs2[7] xor lrs2[6] *lrs2[10];
+    end;
+    m[i]:= res;
+    //Form1.StringGrid3.Cells[0, i]:= IntToStr(res);
+  end;//внешний
+
+end;
+
+procedure gpch2(k7, f2: byte; var m: mss);
+var
+  i, j, k, buf, res: integer;
+  pn, pn2: mas2;
+  lrs2, lrs: mas;
+begin
+  for i:= 0 to length(lrs) - 1 do // заполн€ем линейный регистр первонач значени€ми
+    lrs[i]:= StrToInt(Form1.StringGrid1.Cells[i, 0]);
+  for i:= 0 to length(pn) - 1 do // заполн€ем продвигающий накоп первонач значени€ми
+    pn[i]:= StrToInt(Form1.StringGrid2.Cells[i, 0]);
+
+
+
+  for i:= 0 to num - 1 do begin //внешний
+
+    for k:= 0 to random(10) + 1 do begin //снимаем биты через разное кол-во тактов
+      buf:= lrs[10]; //сохр последний элемент
+      lrs2:= lrs;
+      for j:= 0 to 9 do //сдвигаем
+        lrs[j+1]:= lrs2[j];
+      lrs[0]:= buf xor lrs[8]; //образуем новый элемент по формуле
+    end;
+
+    res:= lrs[0];  //сумматор
+    for j:= 1 to length(lrs) - 1 do
+      res:= res xor lrs[j];
+
+    for k:= 0 to random(10) + 1 do begin //снимаем биты через разное кол-во тактов
+      pn2:= pn;
+      for j:= 0 to 5 do //сдвигаем
+        pn[j+1]:= pn2[j];
+      pn[0]:= res; //образуем новый элемент по формуле
+    end;
+
+//коммутатор
+    pn2:= pn;
+    case k7 of
+      0: commutationk7(pn2, 37);
+      1: commutationk7(pn2, 47);
+    end;
+
+//булева функци€ усложнени€
+    case f2 of
+      0: res:= pn2[1] * pn2[5] or pn2[3] * pn2[6];
+      1: res:= pn2[2] * pn2[3] or pn2[5] * pn2[6];
+    end;
+
+    m[i]:= res;
+    //Form1.StringGrid3.Cells[0, i]:= IntToStr(res);
+  end;//внешний
+
+end;
+
+procedure commutationk7(var a: mas2; num: integer);
+var
+  i, j: integer;
+  b: mas2;
+  commut: mas2;
+begin
+  b:= a;
+  case num of
+    37: commut:= k37;
+    47: commut:= k47;
+  end;
+
+  for i:= 0 to length(a) - 1 do
+    for j:= 0 to length(b) - 1 do
+      if commut[j] = i then b[i]:= a[j];
+  a:= b;
+end;
+procedure commutationk11(var a: mas; num: integer);
+var
+  i, j: integer;
+  b: mas;
+  commut: mas;
+begin
+  b:= a;
+  case num of
+    311: commut:= k311;
+    411: commut:= k411
+  end;
+
+  for i:= 0 to length(a) - 1 do
+    for j:= 0 to length(b) - 1 do
+      if commut[j] = i then b[i]:= a[j];
+  a:= b;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  i: integer;
+  res: extended;
+  e: array [0..998] of byte;
+begin
+  gpch1(0, 0, mas1);
+  gpch1(1, 1, mas22);
+  gpch2(0, 0, mas3);
+  gpch2(1, 1, mas4);
+  for i := 0 to num - 1 do
+    mas5[i]:= mas1[i] xor mas3[i];
+  for i := 0 to num - 1 do
+    mas6[i]:= mas22[i] xor mas4[i];
+//////P1
+  Memo1.Lines.Add('¬еро€тности P(1):');
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas1[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas22[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas3[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas4[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas5[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+
+  res:= 0;
+  for i:= 0 to num - 1 do
+    res:= res + mas6[i];
+  res:= res * 0.001;
+  memo1.Lines.Add(FloatToStr(res));
+    Memo1.Lines.Add('');
+/////Pпер
+  Memo1.Lines.Add('¬еро€тности P(пер):');
+  for i:= 0 to num - 2 do
+    if mas1[i] <> mas1[i+1] then e[i]:= 1
+                            else e[i]:= 0;
+  res:= 0;
+  for i:= 0 to num - 2 do
+    res:= res + e[i];
+  res:= res * (1/999)
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  i: Integer;
+begin
+  randomize;
+  for i:= 0 to length(lrs_first) - 1 do
+    StringGrid1.Cells[i, 0]:= lrs_first[i+1];
+
+  for i:= 0 to length(pn_first) - 1 do
+    StringGrid2.Cells[i, 0]:= pn_first[i+1];
+
+end;
+
+end.
