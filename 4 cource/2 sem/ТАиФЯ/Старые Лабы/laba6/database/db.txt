@@ -1,2 +1,0 @@
-student studid studname studgruop
-group groupid groupname groupcount
